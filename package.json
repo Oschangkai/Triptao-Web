@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "antd": "^2.12.7",
+    "material-ui": "next",
     "react": "^15.6.1",
     "react-apollo": "^1.4.14",
     "react-dom": "^15.6.1",
@@ -11,9 +12,16 @@
     "react-scripts": "1.0.11"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start-o": "react-scripts start",
+    "build-o": "react-scripts build",
+    "test-o": "react-scripts test --env=jsdom",
+    "eject-o": "react-scripts eject",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom"
+  },
+  "devDependencies": {
+    "babel-plugin-import": "^1.4.0",
+    "react-app-rewired": "^1.2.4"
   }
 }

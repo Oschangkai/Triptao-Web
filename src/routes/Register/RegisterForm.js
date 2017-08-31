@@ -1,12 +1,16 @@
 import React from "react";
-import { Button, Input, Checkbox } from "antd";
-import { gql, graphql } from "react-apollo";
+//import PropTypes from 'prop-types';
+import { Button, Checkbox, Input } from "antd";
+import { Form } from "antd";
+import { graphql } from "react-apollo";
 
-class Register extends React.Component {
+import { mutation } from "./RegisterMutation";
+
+class RegisterForm extends React.Component {
   state = {
     username: "",
     //email: "",
-    password: "",
+    password: ""
     //isAdmin: false
   };
 
@@ -32,47 +36,48 @@ class Register extends React.Component {
 
   render() {
     return (
-      <div>
+      <Form>
         <Input
           name="username"
-          placeholder="Username"
+          placeholder="使用者帳號"
           onChange={e => this.onChange(e)}
           value={this.state.username}
         />
+        <br />
         <Input
           name="email"
-          placeholder="Email"
+          placeholder="電子郵件"
           onChange={e => this.onChange(e)}
           value={this.state.email}
         />
+        <br />
         <Input
           name="password"
-          placeholder="Password"
+          placeholder="密碼"
           type="password"
           onChange={e => this.onChange(e)}
           value={this.state.password}
         />
+        <br />
         <Checkbox
+          label="管理者身份？"
           name="isAdmin"
           checked={this.state.isAdmin}
           onChange={e => this.onChange(e)}
-        >
-          Admin?
-        </Checkbox>
+        />
         <br />
-        <Button onClick={() => this.onSubmit()} type="primary">
-          Primary
+        <br />
+        <Button raised color="primary" onClick={() => this.onSubmit()}>
+          註冊
         </Button>
-      </div>
+      </Form>
     );
   }
 }
 
-const mutation = gql`
-mutation($username: String!, $password: String!) {
-  cUser(username: $username, password: $password) {
-    username
-  }
-}
-`;
-export default graphql(mutation)(Register);
+/* RegisterForm.propTypes = {
+  username: PropTypes.string.isRequired,
+  password: PropTypes.string.isRequired,
+}; */
+
+export default graphql(mutation)(RegisterForm);
