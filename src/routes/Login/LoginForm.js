@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 
 import { Form, Icon, Input, Button, Checkbox } from "antd";
 
@@ -10,14 +11,14 @@ class LoginForm extends React.Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        console.log("Received values of form: ", values);
+        console.log("Values: ", values);
       }
     });
   };
   render() {
     const { getFieldDecorator } = this.props.form;
     return (
-      <Form onSubmit={this.handleSubmit} className="login-form">
+      <Form onSubmit={this.handleSubmit}>
         <FormItem>
           {getFieldDecorator("userName", {
             rules: [{ required: true, message: "使用者帳號不得為空！" }]
@@ -54,7 +55,7 @@ class LoginForm extends React.Component {
           >
             登入
           </Button>
-          沒有帳號嗎？ <a href="">馬上註冊！</a>
+          沒有帳號嗎？ <Link to="/register">馬上註冊！</Link>
         </FormItem>
       </Form>
     );

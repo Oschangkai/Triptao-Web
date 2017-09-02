@@ -1,7 +1,13 @@
-@import '~antd/dist/antd.css';
+@import "~antd/dist/antd.css";
 
 .login-form {
-  max-width: 300px;
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  margin: -175px 0 0 -175px;
+  width: 350px;
+  padding: 36px 36px 10px 36px;
+  box-shadow: 0 0 100px rgba(0,0,0,.08);
 }
 .login-form-forgot {
   float: right;
