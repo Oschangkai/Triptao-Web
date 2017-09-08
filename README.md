@@ -1,4 +1,4 @@
-# Triptao 憩桃 - 網頁企業端
+# Triptao 憩桃 - 企業端網頁
  
 ## Installation
 ```bash

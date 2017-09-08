@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 
 import { Form, Icon, Input, Button, Checkbox } from "antd";
 
@@ -22,7 +23,7 @@ class RegisterForm extends React.Component {
         const response = await this.props.mutate({
           variables: values
         });
-        //console.log(response); // 此處要做前端錯誤處理
+        console.log(response); // 此處要做前端錯誤處理
       }
     });
   };
@@ -137,7 +138,7 @@ class RegisterForm extends React.Component {
             initialValue: true
           })(
             <Checkbox>
-              I've read and accepted the <a href="#">Aggreement</a>
+              I've read and accepted the <Link to ="/login">Aggreement</Link>
             </Checkbox>
           )}
         </FormItem>
