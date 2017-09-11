@@ -1,29 +1,38 @@
 import React from "react";
-import { Route, Switch, Link, withRouter } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 import { Breadcrumb } from "antd";
 
-const breadcrumbNameMap = {
-  '/info': '基本資訊',
-  '/details': '地區地圖',
-  '/activity': '近期活動',
-  '/offer/surprise': '驚喜優惠',
-  '/offer/game': '闖關活動',
-  '/offer/coupon': '優惠券',
-  '/broadcast': '即時訊息',
+const AdminBreadcrumb = props => {
+  const { location } = props;
+
+  const breadcrumbNameMap = {
+    "/dashboard/info": "基本資訊",
+    "/dashboard/details": "地區地圖",
+    "/dashboard/activity": "近期活動",
+    "/dashboard/offer/surprise": "驚喜優惠",
+    "/dashboard/offer/game": "闖關活動",
+    "/dashboard/offer/coupon": "優惠券",
+    "/dashboard/broadcast": "即時訊息"
+  };
+
+  const pathSnippets = location.pathname.split("/").filter(i => i);
+  const extraItems = pathSnippets.map((_, index) => {
+    const url = `/${pathSnippets.slice(0, index + 1).join("/")}`;
+    return (
+      <Breadcrumb.Item key={url}>
+        <Link to={url}>{breadcrumbNameMap[url]}</Link>
+      </Breadcrumb.Item>
+    );
+  });
+
+  const breadcrumbItems = [
+    <Breadcrumb.Item key="home">
+      <Link to="/dashboard">Home</Link>
+    </Breadcrumb.Item>
+  ].concat(extraItems);
+
+  return breadcrumbItems;
 };
 
-
-const breadcrumbItems = [(
-  <Breadcrumb.Item key="home">
-    <Link to="/dashboard">Home</Link>
-  </Breadcrumb.Item>
-)]
-
-export default class AdminBreadcrumb extends React.Component {
-  render() {
-    return (
-      <div></div>
-    );
-  }
-}
+export default AdminBreadcrumb;

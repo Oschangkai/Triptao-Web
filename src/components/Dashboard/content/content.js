@@ -1,13 +1,13 @@
 import React from "react";
 
-import { Layout } from "antd";
+//import { Layout } from "antd";
 
-const { Content } = Layout;
+//const { Content } = Layout;
 
 export default class AdminContent extends React.Component {
   render() {
     return (
-      <div></div>
+      <div>YEEE</div>
     );
   }
 }

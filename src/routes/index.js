@@ -1,10 +1,10 @@
-import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import Auth from './Auth';
-import Login from './Login';
-import Register from './Register';
-import Dashboard from './Dashboard';
+import Auth from "./Auth";
+import Login from "./Login";
+import Register from "./Register";
+import Dashboard from "./Dashboard";
 
 export default () => (
   <BrowserRouter>
@@ -13,6 +13,7 @@ export default () => (
       <Route exact path="/register" render={props => <Register {...props} />} />
       <Route exact path="/auth" render={props => <Auth {...props} />} />
       <Route path="/dashboard" render={props => <Dashboard {...props} />} />
+      <Route render={() => <span>Home Page</span>} />
     </Switch>
   </BrowserRouter>
 );
