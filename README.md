@@ -24,6 +24,7 @@ $ yarn start
 │  │  └─ Dashboard/           # Dashboard 的元件
 │  ├─ routes/               # 路由
 │  │  ├─ Login/               # 登入頁面
+│  │  ├─ Dashboard/           # 後台頁面
 │  │  └─ Register/            # 註冊頁面
 │  └─ index.js              # 路由進入點
 ├─ index.js               # 此專案進入點

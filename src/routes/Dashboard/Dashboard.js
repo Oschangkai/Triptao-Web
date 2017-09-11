@@ -1,5 +1,5 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { Button, Layout, Breadcrumb, Icon } from "antd";
 
 import SiderContent from "../../components/Dashboard/sider";
@@ -53,15 +53,26 @@ export default class Dashboard extends React.Component {
             </Button>
           </Header>
           <Content style={{ margin: "0 16px" }}>
-            <Breadcrumb style={{ margin: "12px 0" }}>{ Breadcrumbs }</Breadcrumb>
+            <Breadcrumb style={{ margin: "12px 0" }}>{Breadcrumbs}</Breadcrumb>
             <div style={{ padding: 24, background: "#fff", minHeight: 360 }}>
-              <Route path="/dashboard/info" component={content} />
-              <Route path="/dashboard/details" component={content} />
-              <Route path="/dashboard/activity" component={content} />
-              <Route path="/dashboard/offer/surprise" component={content} />
-              <Route path="/dashboard/offer/coupon" component={content} />
-              <Route path="/dashboard/broadcast" component={content} />
-              <Route render={() => <span>Dashboard</span>} />
+              <Switch>
+                <Route exact path="/dashboard/info" component={content} />
+                <Route exact path="/dashboard/details" component={content} />
+                <Route exact path="/dashboard/activity" component={content} />
+                <Route
+                  exact
+                  path="/dashboard/offer/surprise"
+                  component={content}
+                />
+                <Route
+                  exact
+                  path="/dashboard/offer/coupon"
+                  component={content}
+                />
+                <Route exact path="/dashboard/offer/game" component={content} />
+                <Route exact path="/dashboard/broadcast" component={content} />
+                <Route render={() => <span>Hi</span>} />
+              </Switch>
             </div>
           </Content>
           <Footer style={{ textAlign: "center" }}>
