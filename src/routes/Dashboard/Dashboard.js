@@ -53,7 +53,9 @@ export default class Dashboard extends React.Component {
             </Button>
           </Header>
           <Content style={{ margin: "0 16px" }}>
-            <Breadcrumb style={{ margin: "12px 0" }}>{Breadcrumbs}</Breadcrumb>
+            <Breadcrumb style={{ margin: "12px 0" }}>
+              {Breadcrumbs(this.props)}
+            </Breadcrumb>
             <div style={{ padding: 24, background: "#fff", minHeight: 360 }}>
               <Switch>
                 <Route exact path="/dashboard/info" component={content} />
