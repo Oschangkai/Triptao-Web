@@ -5,7 +5,8 @@ module.exports = function override(config, env) {
   config = injectBabelPlugin(
     ["import", { libraryName: "antd", style: true }],
     config
-  );
+  )
+  config = rewireLess(config, env);
   
   return config;
 };
