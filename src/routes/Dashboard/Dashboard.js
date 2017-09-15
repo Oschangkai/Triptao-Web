@@ -32,7 +32,7 @@ export default class Dashboard extends React.Component {
               <SubMenu
                 title={
                   <span>
-                    <Icon type="user" />六福村
+                    <Icon type="user" />小人國
                   </span>
                 }
               >
