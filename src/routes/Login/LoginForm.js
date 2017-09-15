@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 import { Form, Icon, Input, Button, Checkbox } from "antd";
 
@@ -53,7 +53,7 @@ class LoginForm extends React.Component {
             htmlType="submit"
             className="login-form-button"
           >
-            登入
+            <Icon type="login" />登入
           </Button>
           沒有帳號嗎？ <Link to="/register">馬上註冊！</Link>
         </FormItem>

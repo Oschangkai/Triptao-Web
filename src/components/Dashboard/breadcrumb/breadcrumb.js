@@ -7,9 +7,11 @@ const AdminBreadcrumb = props => {
   const { location } = props;
 
   const breadcrumbNameMap = {
+    "/dashboard": "首頁",
     "/dashboard/info": "基本資訊",
     "/dashboard/details": "地區地圖",
     "/dashboard/activity": "近期活動",
+    "/dashboard/offer": "優惠與遊戲",
     "/dashboard/offer/surprise": "驚喜優惠",
     "/dashboard/offer/game": "闖關活動",
     "/dashboard/offer/coupon": "優惠券",
@@ -26,13 +28,8 @@ const AdminBreadcrumb = props => {
     );
   });
 
-  const breadcrumbItems = [
-    <Breadcrumb.Item key="home">
-      <Link to="/dashboard">Home</Link>
-    </Breadcrumb.Item>
-  ].concat(extraItems);
-
+  const breadcrumbItems = [].concat(extraItems);
+  
   return breadcrumbItems;
 };
-
 export default AdminBreadcrumb;
