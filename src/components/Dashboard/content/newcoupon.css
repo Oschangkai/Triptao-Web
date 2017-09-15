@@ -1,0 +1,53 @@
+.word{
+    color : black ;
+    
+}
+.couponname{
+    color: black;
+    margin-left:40px;
+    margin-top: 80px;
+    height:5px;
+}
+.acceptable{
+    color: black;
+    margin-left:40px;
+    margin-top: 50px;
+    height:15px;
+
+}
+.grouptitle{
+    color: black;
+    margin-left:80px;
+    margin-top: 10px;
+    height:15px;
+}
+
+.group{
+    color: black;
+    margin-left:130px;
+    margin-top: 10px;
+    height:25px;
+}
+.option{
+    color: black;
+    margin-left:15px;
+
+}
+.deadlinetitle{
+    color: black;
+    margin-left:40px;
+    margin-top: 10px;
+    height:15px;
+}
+.deadline{
+    color: black;
+    margin-left:130px;
+    margin-top: 10px;
+    height:70px;
+}
+.enter{
+    color: black;
+    margin-left: 500px;
+    margin-top: 200px;
+
+}

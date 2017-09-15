@@ -5,6 +5,8 @@ import { Button, Layout, Breadcrumb, Icon } from "antd";
 import SiderContent from "../../components/Dashboard/sider";
 import Breadcrumbs from "../../components/Dashboard/breadcrumb";
 import content from "../../components/Dashboard/content";
+import newcoupon from "../../components/Dashboard/content/newcoupon"
+import game from "../../components/Dashboard/content/game"
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -58,10 +60,11 @@ export default class Dashboard extends React.Component {
               <Route path="/dashboard/info" component={content} />
               <Route path="/dashboard/details" component={content} />
               <Route path="/dashboard/activity" component={content} />
+              <Route path="/dashboard/offer/coupon" component={newcoupon} />
               <Route path="/dashboard/offer/surprise" component={content} />
-              <Route path="/dashboard/offer/coupon" component={content} />
+              <Route path="/dashboard/offer/game" component={game} />              
               <Route path="/dashboard/broadcast" component={content} />
-              <Route render={() => <span>Dashboard</span>} />
+              <Route render={() => <span></span>} />
             </div>
           </Content>
           <Footer style={{ textAlign: "center" }}>
