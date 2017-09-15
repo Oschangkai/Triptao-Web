@@ -62,7 +62,7 @@ export default class Dashboard extends React.Component {
                 <Route
                   exact
                   path="/dashboard/offer/coupon"
-                  component={content}
+                  component={newcoupon}
                 />
                 <Route exact path="/dashboard/offer/game" component={content} />
                 <Route exact path="/dashboard/broadcast" component={content} />
