@@ -1,38 +1,31 @@
 .back{
-    margin: 20px;
-    color: white;
-    background: rgb(0, 0, 0);
-
-    height: 40px;
-    width : 140px ;
-    position: relative;
-    border-radius: 5px;
+    color: black;
     
 }
 .couponname{
     color: black;
-    margin-left:40px;
-    margin-top: 80px;
+    margin-left:50px;
+    margin-top: 40px;
     height:5px;
     border-radius: 10.5px
 }
 .acceptable{
     color: black;
-    margin-left:40px;
+    margin-left:50px;
     margin-top: 50px;
     height:15px;
 
 }
 .grouptitle{
     color: black;
-    margin-left:80px;
+    margin-left:90px;
     margin-top: 10px;
     height:15px;
 }
 
 .group{
     color: black;
-    margin-left:130px;
+    margin-left:140px;
     margin-top: 10px;
     height:25px;
 }
@@ -43,24 +36,17 @@
 }
 .deadlinetitle{
     color: black;
-    margin-left:40px;
+    margin-left:50px;
     margin-top: 10px;
     height:15px;
 }
 .deadline{
     color: black;
-    margin-left:130px;
+    margin-left:140px;
     margin-top: 10px;
-    height:70px;
+    
 }
-.enter{
-   
-    margin: 20px;
-    color: white;
-    background: rgb(0, 0, 0);    
-    height: 35px;
-    width: 70px;
-    position: relative;
-    border-radius: 10.5px;
-
+.addcoupon{
+    color: black;
+    margin-top: 100px;
 }

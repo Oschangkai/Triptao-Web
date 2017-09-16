@@ -14,12 +14,8 @@ import "./newcoupon.css"
               
                 
               <div> 
-                  <button className ="back">< Icon type="rollback"/>返回優惠券列表  </button>
-                   <span>                       
-                         <center><font size ="5" color = "black">新增優惠券</font></center>                         
-                   </span>
-                  
-                  
+                  <span className ="back">< Icon type="rollback"/>返回優惠券列表  </span>                  
+                     
                   <span>
                 <li className="couponname">
                        優惠券名稱 :  
@@ -74,12 +70,8 @@ import "./newcoupon.css"
                         
                          <span className="deadline"><DatePicker placeholder="請選擇日期" /></span>
                         
-                         <span><center> <button className="enter">送出 </button></center></span>
+                         <span className="addcoupon"><center><Icon type="plus-circle-o"/> 新增 </center></span>
                
-
-                        
-                        
-            
                   
               </div>
              

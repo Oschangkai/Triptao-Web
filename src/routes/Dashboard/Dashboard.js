@@ -7,6 +7,7 @@ import Breadcrumbs from "../../components/Dashboard/breadcrumb";
 import content from "../../components/Dashboard/content";
 import newcoupon from "../../components/Dashboard/content/newcoupon"
 import game from "../../components/Dashboard/content/game"
+import newgame from "../../components/Dashboard/content/newgame"
 
 import "./Dashboard.less";
 
@@ -64,7 +65,7 @@ export default class Dashboard extends React.Component {
                   path="/dashboard/offer/coupon"
                   component={newcoupon}
                 />
-                <Route exact path="/dashboard/offer/game" component={content} />
+                <Route exact path="/dashboard/offer/game" component={newgame} />
                 <Route exact path="/dashboard/broadcast" component={content} />
                 <Route render={() => <span>Hi</span>} />
               </Switch>
