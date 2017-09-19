@@ -53,20 +53,34 @@ export default class Dashboard extends React.Component {
             <div style={{ padding: 24, background: "#fff", minHeight: 360 }}>
               <Switch>
                 <Route exact path="/dashboard/info" component={content} />
-                <Route exact path="/dashboard/details" component={content} />
+                <Route exact path="/dashboard/details" component={content} /> 
+                <Route exact path="/dashboard/details/new" component={content} />
                 <Route exact path="/dashboard/activity" component={content} />
+                <Route exact path="/dashboard/activity/new" component={content} />
                 <Route
                   exact
                   path="/dashboard/offer/surprise"
                   component={content}
                 />
                 <Route
+                exact
+                path="/dashboard/offer/surprise/new"
+                component={content}
+              />
+                <Route
                   exact
                   path="/dashboard/offer/coupon"
-                  component={newcoupon}
+                  component={content}
                 />
-                <Route exact path="/dashboard/offer/game" component={newgame} />
+                <Route
+                exact
+                path="/dashboard/offer/coupon/new"
+                component={newcoupon}
+              />
+                <Route exact path="/dashboard/offer/game" component={content} />
+                <Route exact path="/dashboard/offer/game/new" component={newgame} />
                 <Route exact path="/dashboard/broadcast" component={content} />
+                <Route exact path="/dashboard/broadcast/new" component={content} />
                 <Route render={() => <span>Hi</span>} />
               </Switch>
             </div>
