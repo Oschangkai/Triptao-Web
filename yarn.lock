@@ -5527,6 +5527,14 @@ rc-progress@~2.2.2:
     babel-runtime "6.x"
     prop-types "^15.5.8"
 
+rc-queue-anim@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/rc-queue-anim/-/rc-queue-anim-1.2.2.tgz#e06e74a7ba8b5e072babe4556be8401bd740c0b5"
+  dependencies:
+    babel-runtime "6.x"
+    prop-types "^15.5.0"
+    rc-tween-one "~1.4.2"
+
 rc-rate@~2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/rc-rate/-/rc-rate-2.1.1.tgz#88aeda8b3d6470bbae4f6518c652a02a959bddc5"
@@ -5661,7 +5669,7 @@ rc-trigger@1.x:
     rc-animate "2.x"
     rc-util "4.x"
 
-rc-tween-one@^1.4.4:
+rc-tween-one@^1.4.5, rc-tween-one@~1.4.2:
   version "1.4.5"
   resolved "https://registry.yarnpkg.com/rc-tween-one/-/rc-tween-one-1.4.5.tgz#16599c2602b588379d5cf8852abcd7527540b0e5"
   dependencies:
@@ -7166,7 +7174,7 @@ whatwg-encoding@^1.0.1:
   dependencies:
     iconv-lite "0.4.13"
 
-whatwg-fetch@2.0.3, whatwg-fetch@>=0.10.0, whatwg-fetch@^2.0.0:
+whatwg-fetch@2.0.3, whatwg-fetch@>=0.10.0, whatwg-fetch@^2.0.0, whatwg-fetch@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-2.0.3.tgz#9c84ec2dcf68187ff00bc64e1274b442176e1c84"
 

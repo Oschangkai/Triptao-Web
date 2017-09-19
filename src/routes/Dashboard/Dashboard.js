@@ -65,8 +65,8 @@ export default class Dashboard extends React.Component {
                   path="/dashboard/offer/coupon"
                   component={newcoupon}
                 />
-                <Route exact path="/dashboard/offer/game" component={newgame} />
-                <Route exact path="/dashboard/broadcast" component={content} />
+                <Route exact path="/dashboard/offer/game" component={game} />
+                <Route exact path="/dashboard/broadcast" component={newgame} />
                 <Route render={() => <span>Hi</span>} />
               </Switch>
             </div>
