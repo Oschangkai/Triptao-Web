@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "antd": "^2.12.7",
+    "nodemon": "^1.12.1",
     "rc-queue-anim": "^1.2.2",
     "rc-tween-one": "^1.4.5",
     "react": "^15.6.1",
@@ -11,7 +12,8 @@
     "react-dom": "^15.6.1",
     "react-router-dom": "^4.2.0",
     "react-scripts": "1.0.11",
-    "whatwg-fetch": "^2.0.3"
+    "whatwg-fetch": "^2.0.3",
+    "yarn": "^1.0.2"
   },
   "scripts": {
     "start-o": "react-scripts start",

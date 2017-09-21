@@ -1,33 +1,28 @@
-.backtogame
-{
-    color: black;
-    margin-left:5px;
-    margin-top: 5px;
- ;
+.backtogame {
+  color: black;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+.gamenameinput {
+  text-align: center;
+}
+.gamename {
+  color: black;
+  margin-left: 50px;
+  margin-top: 75px;
+  height: 55px;
 }
 
-.gamename
-{    
-    color: black;
-    margin-left:50px;
-    margin-top: 75px;
-    height:55px;
+.selectgame {
+  color: black;
+  margin-left: 50px;
+  height: 55px;
 }
-
-.selectgame
-{
-    color: black;
-    margin-left:50px;
-  
-    height:55px;
+.selectcoupon {
+  color: black;
+  margin-left: 50px;
+  height: 65px;
 }
-.selectcoupon
-{
-    color: black;
-    margin-left:50px;
-    height:65px;
-}
-.addgame{
-    color: black;
-  
+.addgame {
+  color: black;
 }

@@ -1,0 +1,22 @@
+.radiobuttontitle {
+  color: black;
+  margin-left: 50px;
+  margin-top: 40px;
+}
+.radiobutton {
+  color: black;
+  margin-left: 12px;
+}
+.inputtitle {
+  color: black;
+  margin-left: 50px;
+  margin-top: 40px;
+}
+.input {
+  color: black;
+  margin-left: 10px;
+  text-align: center;
+}
+.switch {
+  margin-left: 30px;
+}

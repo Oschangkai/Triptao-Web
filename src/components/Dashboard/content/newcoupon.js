@@ -1,24 +1,26 @@
 import React from "react";
-import { Icon, Input, Checkbox, DatePicker } from "antd";
+import { Icon, Checkbox, DatePicker } from "antd";
 import { Link } from "react-router-dom";
-
-import Button from "antd/lib/button";
 import "./newcoupon.css";
 
 export default class Newcoupon extends React.Component {
   render() {
     return (
       <div>
-        <Link to="/dashboard/offer/coupon">
-          <span className="back">
+        <span className="back">
+          <Link to="/dashboard/offer/coupon">
             <Icon type="rollback" />返回優惠券列表{" "}
-          </span>
-        </Link>
+          </Link>
+        </span>
 
         <span>
           <li className="couponname">
             優惠券名稱 : &nbsp;
-            <input type="text" placeholder="      請輸入優惠券名稱" />
+            <input
+              type="text"
+              placeholder="請輸入優惠券名稱"
+              className="couponnameinput"
+            />
           </li>
         </span>
         <li className="acceptable">請勾選可使用店家 &nbsp;</li>
@@ -98,7 +100,9 @@ export default class Newcoupon extends React.Component {
 
         <span className="addcoupon">
           <center>
-            <Icon type="plus-circle-o" /> 新增{" "}
+            <Link to="/dashboard/offer/coupon">
+              <Icon type="plus-circle-o" /> 新增{" "}
+            </Link>
           </center>
         </span>
       </div>

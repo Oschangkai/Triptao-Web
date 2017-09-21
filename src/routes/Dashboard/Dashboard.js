@@ -5,9 +5,10 @@ import { Menu, Layout, Breadcrumb, Icon } from "antd";
 import SiderContent from "../../components/Dashboard/sider";
 import Breadcrumbs from "../../components/Dashboard/breadcrumb";
 import content from "../../components/Dashboard/content";
-import newcoupon from "../../components/Dashboard/content/newcoupon"
-import game from "../../components/Dashboard/content/game"
-import newgame from "../../components/Dashboard/content/newgame"
+import newcoupon from "../../components/Dashboard/content/newcoupon";
+import game from "../../components/Dashboard/content/game";
+import info from "../../components/Dashboard/content/info";
+import newgame from "../../components/Dashboard/content/newgame";
 
 import "./Dashboard.less";
 
@@ -52,35 +53,51 @@ export default class Dashboard extends React.Component {
             </Breadcrumb>
             <div style={{ padding: 24, background: "#fff", minHeight: 360 }}>
               <Switch>
-                <Route exact path="/dashboard/info" component={content} />
-                <Route exact path="/dashboard/details" component={content} /> 
-                <Route exact path="/dashboard/details/new" component={content} />
+                <Route exact path="/dashboard/info" component={info} />
+                <Route exact path="/dashboard/details" component={content} />
+                <Route
+                  exact
+                  path="/dashboard/details/new"
+                  component={content}
+                />
                 <Route exact path="/dashboard/activity" component={content} />
-                <Route exact path="/dashboard/activity/new" component={content} />
+                <Route
+                  exact
+                  path="/dashboard/activity/new"
+                  component={content}
+                />
                 <Route
                   exact
                   path="/dashboard/offer/surprise"
                   component={content}
                 />
                 <Route
-                exact
-                path="/dashboard/offer/surprise/new"
-                component={content}
-              />
+                  exact
+                  path="/dashboard/offer/surprise/new"
+                  component={content}
+                />
                 <Route
                   exact
                   path="/dashboard/offer/coupon"
                   component={content}
                 />
                 <Route
-                exact
-                path="/dashboard/offer/coupon/new"
-                component={newcoupon}
-              />
-                <Route exact path="/dashboard/offer/game" component={content} />
-                <Route exact path="/dashboard/offer/game/new" component={newgame} />
+                  exact
+                  path="/dashboard/offer/coupon/new"
+                  component={newcoupon}
+                />
+                <Route exact path="/dashboard/offer/game" component={game} />
+                <Route
+                  exact
+                  path="/dashboard/offer/game/new"
+                  component={newgame}
+                />
                 <Route exact path="/dashboard/broadcast" component={content} />
-                <Route exact path="/dashboard/broadcast/new" component={content} />
+                <Route
+                  exact
+                  path="/dashboard/broadcast/new"
+                  component={content}
+                />
                 <Route render={() => <span>Hi</span>} />
               </Switch>
             </div>

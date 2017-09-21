@@ -175,6 +175,7 @@ export default class Newgame extends React.Component {
   state = {
     value: []
   };
+
   onChange = value => {
     console.log("onChange ", value, arguments);
     this.setState({ value });
@@ -194,16 +195,20 @@ export default class Newgame extends React.Component {
 
     return (
       <div>
-        <Link to="/dashboard/offer/game">
-          <span className="backtogame">
+        <span className="backtogame">
+          <Link to="/dashboard/offer/game">
             <Icon type="rollback" />
             回到闖關活動列表
-          </span>
-        </Link>
+          </Link>
+        </span>
 
         <li className="gamename">
           關卡名稱 : &nbsp;
-          <input type="text" placeholder="     請輸入闖關活動名稱" />
+          <input
+            type="text"
+            placeholder="請輸入闖關活動名稱"
+            className="gamenameinput"
+          />
         </li>
         <li className="selectgame">
           關卡內容 : &nbsp;<TreeSelect {...tProps} />
@@ -223,7 +228,9 @@ export default class Newgame extends React.Component {
         </li>
         <span className="addgame">
           <center>
-            <Icon type="plus-circle-o" />新增
+            <Link to="/dashboard/offer/game">
+              <Icon type="plus-circle-o" />新增
+            </Link>
           </center>
         </span>
       </div>
