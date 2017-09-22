@@ -179,4 +179,3 @@ export default class game extends React.Component {
     );
   }
 }
-document.getElementById("newgame");

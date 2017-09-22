@@ -7,7 +7,7 @@ import Breadcrumbs from "../../components/Dashboard/breadcrumb";
 import content from "../../components/Dashboard/content";
 import newcoupon from "../../components/Dashboard/content/newcoupon";
 import game from "../../components/Dashboard/content/game";
-import info from "../../components/Dashboard/content/info";
+import newDetails from "../../components/Dashboard/content/newDetails";
 import newgame from "../../components/Dashboard/content/newgame";
 
 import "./Dashboard.less";
@@ -34,7 +34,7 @@ export default class Dashboard extends React.Component {
               <SubMenu
                 title={
                   <span>
-                    <Icon type="user" />小人國
+                    <Icon type="user" />奧爾森林學堂
                   </span>
                 }
               >
@@ -47,18 +47,18 @@ export default class Dashboard extends React.Component {
               </SubMenu>
             </Menu>
           </Header>
-          <Content style={{ margin: "0 16px" }}>
+          <Content style={{ margin: "0 30px" }}>
             <Breadcrumb style={{ margin: "12px 0" }}>
               {Breadcrumbs(this.props)}
             </Breadcrumb>
-            <div style={{ padding: 24, background: "#fff", minHeight: 360 }}>
+            <div className="content">
               <Switch>
-                <Route exact path="/dashboard/info" component={info} />
+                <Route exact path="/dashboard/info" component={content} />
                 <Route exact path="/dashboard/details" component={content} />
                 <Route
                   exact
                   path="/dashboard/details/new"
-                  component={content}
+                  component={newDetails}
                 />
                 <Route exact path="/dashboard/activity" component={content} />
                 <Route
