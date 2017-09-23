@@ -5,6 +5,7 @@ import { Menu, Layout, Breadcrumb, Icon } from "antd";
 import SiderContent from "../../components/Dashboard/sider";
 import Breadcrumbs from "../../components/Dashboard/breadcrumb";
 import content from "../../components/Dashboard/content";
+import info from "../../components/Dashboard/content/info";
 import newcoupon from "../../components/Dashboard/content/newcoupon";
 import game from "../../components/Dashboard/content/game";
 import newDetails from "../../components/Dashboard/content/newDetails";
@@ -53,7 +54,7 @@ export default class Dashboard extends React.Component {
             </Breadcrumb>
             <div className="content">
               <Switch>
-                <Route exact path="/dashboard/info" component={content} />
+                <Route exact path="/dashboard/info" component={info} />
                 <Route exact path="/dashboard/details" component={content} />
                 <Route
                   exact
