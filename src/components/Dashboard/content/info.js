@@ -50,14 +50,14 @@ const placehoders = {
 };
 
 const val = {
-  name: "奧爾森林學堂",
-  address: "桃園市桃園區公園路 42 號",
-  tel: "3946061",
-  businessHour: "08：00 ~ 17：00",
+  name: "桃園忠烈祠暨神社文化園區",
+  address: "桃園市桃園區成功路三段200號",
+  tel: "03-3325215",
+  businessHour: " 週一至週日09:00~17:00",
   admission: "免費",
   intro:
-    "「奧爾森林學堂」位於素有「桃園後花園」美譽的虎頭山公園內，在2012年以不破壞公園內景觀及樹木為原則下，在林木間搭起木製空中步道，同時利用雀榕善於纏繞的特性讓樹木與樹屋共生，打造出充滿生命力的三座「活」樹屋，並以大大小小的貓頭鷹裝飾其中，命名為「奧爾森林學堂」。其中有設計六角形的「讀樹教室」，可近距離觀察樹木生長的生態；從貓頭鷹造型的「咕咕屋」則可窺見鳥類生態；至於船型的「綠野方舟」則是孩子們最佳表演平台，待再久都不厭煩。",
-  website: "https://travel.tycg.gov.tw/zh-tw/Travel/Attraction/14"
+    "座落於桃園市虎頭山上的桃園市忠烈祠，落成於民國二十七年，前身為日本人所建造的「桃園神社」，是臺灣保存最為完整的日治時代神社，建築風格融合了中國古代唐風、日本風及臺灣近代風，採用上等台灣檜木構築，並已在民國八十三年經公告正式被列為國家三級古蹟；也因為特殊的歷史文化價值，而被電影《KANO》選中成為拍片場景，引領觀眾深刻感受1930年代的歲月回憶。",
+  website: "http://www.tycg.gov.tw/confucius/index.jsp"
 };
 
 const category = {
@@ -80,7 +80,7 @@ export default class info extends React.Component {
     super(props);
 
     this.state = {
-      catagory: "景點",
+      catagory: "園區",
       disabled: true,
       ...val
     };
@@ -108,13 +108,13 @@ export default class info extends React.Component {
         </FormItem>
 
         <FormItem {...formItemLayout} label="用戶商標">
-          <Avatar size="large" src="https://ppt.cc/f6Q0mx" />
+          <Avatar size="large" src="https://i.imgur.com/jvRgWB3.jpg" />
         </FormItem>
         <FormItem {...formItemLayout} label="AR寶寶">
           <img src={""} />
         </FormItem>
 
-        <FormItem {...formItemLayout} label="景點名稱">
+        <FormItem {...formItemLayout} label="園區名稱">
           <Input
             type="text"
             id="name"
@@ -124,7 +124,7 @@ export default class info extends React.Component {
           />
         </FormItem>
 
-        <FormItem {...formItemLayout} label="景點分類">
+        <FormItem {...formItemLayout} label="園區分類">
           <RadioGroup
             id="category"
             onChange={this.catagoryOnChanged}
@@ -135,7 +135,7 @@ export default class info extends React.Component {
           </RadioGroup>
         </FormItem>
 
-        <FormItem {...formItemLayout} label="景點地址">
+        <FormItem {...formItemLayout} label="園區地址">
           <Input
             type="text"
             id="address"
@@ -175,7 +175,7 @@ export default class info extends React.Component {
           />
         </FormItem>
 
-        <FormItem {...formItemLayout} label="景點介紹">
+        <FormItem {...formItemLayout} label="園區介紹">
           <TextArea
             rows={5}
             id="intro"

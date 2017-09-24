@@ -1,12 +1,10 @@
 import React from "react";
-import { Icon } from "antd";
 import Table from "antd/lib/table";
 import Button from "antd/lib/button";
-import QueueAnim from "rc-queue-anim";
 import PropTypes from "prop-types";
 import { TweenOneGroup } from "rc-tween-one";
-import { Link, Route, Switch } from "react-router-dom";
-import "./game.css";
+import { Link } from "react-router-dom";
+import "./broadcast.css";
 
 export default class game extends React.Component {
   static propTypes = {
@@ -19,13 +17,18 @@ export default class game extends React.Component {
 
   constructor(props) {
     super(props);
-   
-
-
     this.columns = [
-      { title: "關卡名稱", dataIndex: "gamename", key: "gamename" },
-      { title: "關卡內容", dataIndex: "gamecontent", key: "gamecontent" },
-      { title: "通關獎勵", dataIndex: "gameprize", key: "gameprize" },
+      {
+        title: "即時訊息內容",
+        dataIndex: "broadcastcontent",
+        key: "broadcastcontent"
+      },
+      { title: "即時訊息時間", dataIndex: "broadcasttime", key: "broadcasttime" },
+      {
+        title: "即時訊息地點",
+        dataIndex: "broadcastlocation",
+        key: "broadcastlocation"
+      },
       {
         title: "刪除",
         dataIndex: "",
@@ -59,56 +62,44 @@ export default class game extends React.Component {
       { height: 0, duration: 200, ease: "easeOutQuad" }
     ];
 
-    let a = this.props.cheatdata;
-    if (a == 1) {
-      this.data = [
-        {
-          key: 1,
-          gamename: "了解故鄉之旅",
-          gamecontent: "迷你台灣、迷你亞洲",
-          gameprize: "歡迎蒞臨小人國"
-        },
-        {
-          key: 2,
-          gamename: "g7",
-          gamecontent: "h7",
-          gameprize: "I7"
-        },
-        {
-          key: 3,
-          gamename: "d7",
-          gamecontent: "e7",
-          gameprize: "f7"
-        },
-        {
-          key: 4,
-          gamename: "a7",
-          gamecontent: "b7",
-          gameprize: "c7"
-        }
-      ];
-      this.currentPage = 1;
-      this.newPage = 1;
-      this.state = {
-        data: this.data
-      };
-    } else {
-      this.data = [
-        {
-          key: 1,
-          gamename: "87boy",
-          gamecontent: "a",
-          gameprize: "a"
-        }
-      ];
-      this.currentPage = 1;
-      this.newPage = 1;
-      this.state = {
-        data: this.data
-      };
-    }
+    this.data = [
+      {
+        key: 1,
+        broadcastcontent: "豪雨特報",
+        broadcasttime: "14:00~16:00",
+        broadcastlocation: "全園區"
+      },
+      {
+        key: 2,
+        broadcastcontent: "本殿有毒蛇出沒",
+        broadcasttime: "17:00",
+        broadcastlocation: "本殿"
+      },
+      {
+        key: 3,
+        broadcastcontent: "東司化妝室維修",
+        broadcasttime: "11:00~1300",
+        broadcastlocation: "東司"
+      },
+      {
+        key: 4,
+        broadcastcontent: "突有落石",
+        broadcasttime: "14:00",
+        broadcastlocation: "枅垣與透塀"
+      },
+      {
+        key: 5,
+        broadcastcontent: "社務所展覽",
+        broadcasttime: "13:00~1700  ",
+        broadcastlocation: "社務所"
+      }
+    ];
+    this.currentPage = 1;
+    this.newPage = 1;
+    this.state = {
+      data: this.data
+    };
   }
-
   onEnd = e => {
     const dom = e.target;
     dom.style.height = "auto";
@@ -145,29 +136,9 @@ export default class game extends React.Component {
   render() {
     return (
       <div>
-        <div className={this.props.className}>
-          <ul>
-            <li />
-            <li />
-            <li />
-            <li />
-            <li />
-          </ul>
-        </div>
-
-        <div className={`${this.props.className}-list`}>
-          <QueueAnim type="bottom" component="ul">
-            <li key="0" />
-            <li key="1" />
-            <li key="2" />
-            <li key="3" />
-            <li key="4" />
-          </QueueAnim>
-        </div>
-
         <div className={`${this.props.className}-action-bar`}>
           <Button type="primary">
-            <Link to="/dashboard/offer/game/new">新增闖關活動</Link>
+            <Link to="/dashboard/offer/broadcast/new">新增即時訊息</Link>
           </Button>
         </div>
         <Table
@@ -178,7 +149,6 @@ export default class game extends React.Component {
           getBodyWrapper={this.getBodyWrapper}
           onChange={this.pageChange}
         />
-
       </div>
     );
   }

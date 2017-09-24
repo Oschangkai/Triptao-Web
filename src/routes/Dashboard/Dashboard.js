@@ -6,10 +6,13 @@ import SiderContent from "../../components/Dashboard/sider";
 import Breadcrumbs from "../../components/Dashboard/breadcrumb";
 import content from "../../components/Dashboard/content";
 import info from "../../components/Dashboard/content/info";
+import surprise from "../../components/Dashboard/content/surprise";
+import coupon from "../../components/Dashboard/content/coupon";
 import newcoupon from "../../components/Dashboard/content/newcoupon";
 import game from "../../components/Dashboard/content/game";
 import newDetails from "../../components/Dashboard/content/newDetails";
 import newgame from "../../components/Dashboard/content/newgame";
+import broadcast from "../../components/Dashboard/content/broadcast";
 
 import "./Dashboard.less";
 
@@ -55,7 +58,11 @@ export default class Dashboard extends React.Component {
             <div className="content">
               <Switch>
                 <Route exact path="/dashboard/info" component={info} />
-                <Route exact path="/dashboard/details" component={content} />
+                <Route
+                  exact
+                  path="/dashboard/details"
+                  component={content}
+                />
                 <Route
                   exact
                   path="/dashboard/details/new"
@@ -70,7 +77,7 @@ export default class Dashboard extends React.Component {
                 <Route
                   exact
                   path="/dashboard/offer/surprise"
-                  component={content}
+                  component={surprise}
                 />
                 <Route
                   exact
@@ -80,7 +87,7 @@ export default class Dashboard extends React.Component {
                 <Route
                   exact
                   path="/dashboard/offer/coupon"
-                  component={content}
+                  component={coupon}
                 />
                 <Route
                   exact
@@ -93,7 +100,11 @@ export default class Dashboard extends React.Component {
                   path="/dashboard/offer/game/new"
                   component={newgame}
                 />
-                <Route exact path="/dashboard/broadcast" component={content} />
+                <Route
+                  exact
+                  path="/dashboard/broadcast"
+                  component={broadcast}
+                />
                 <Route
                   exact
                   path="/dashboard/broadcast/new"
