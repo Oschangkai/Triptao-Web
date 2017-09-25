@@ -140,6 +140,7 @@ export default class newDetails extends React.Component {
           intro_tag: preTag.exhibition + tag.intro
         });
         break;
+      default:
     }
   };
 
@@ -153,7 +154,7 @@ export default class newDetails extends React.Component {
     return (
       <Form>
         <FormItem {...formItemLayout} style={{ paddingTop: 10, paddingLeft: 10 }}>
-          <h1>新增園區地點</h1>
+          <h1>新增地標資訊</h1>
         </FormItem>
         <FormItem {...formItemLayout} label={tag.category}>
           <RadioGroup

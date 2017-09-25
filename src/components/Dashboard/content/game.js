@@ -1,11 +1,9 @@
 import React from "react";
-import { Icon } from "antd";
-import Table from "antd/lib/table";
-import Button from "antd/lib/button";
+import { Button, Table } from "antd";
 import QueueAnim from "rc-queue-anim";
 import PropTypes from "prop-types";
 import { TweenOneGroup } from "rc-tween-one";
-import { Link, Route, Switch } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./game.css";
 
 export default class game extends React.Component {

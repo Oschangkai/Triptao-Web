@@ -111,7 +111,7 @@ export default class info extends React.Component {
           <Avatar size="large" src="https://i.imgur.com/jvRgWB3.jpg" />
         </FormItem>
         <FormItem {...formItemLayout} label="AR寶寶">
-          <img src={""} />
+          <img src={""} alt="AR doll" />
         </FormItem>
 
         <FormItem {...formItemLayout} label="園區名稱">
@@ -196,7 +196,7 @@ export default class info extends React.Component {
 
         <FormItem {...tailFormItemLayout}>
           <Button type="primary" htmlType="submit">
-            送出
+            更新資料
           </Button>
         </FormItem>
       </Form>
