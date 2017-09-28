@@ -11,7 +11,7 @@ export default class AdminSider extends React.Component {
   render() {
     return (
       <div>
-        <Link to="/dashboard"><div className="logo">奧爾森林學堂</div></Link>
+        <Link to="/dashboard"><div className="logo">忠烈祠</div></Link>
         <Menu theme="light" defaultSelectedKeys={[""]} mode="inline">
           <Menu.Item key="/dashboard/info">
             <Link to="/dashboard/info">

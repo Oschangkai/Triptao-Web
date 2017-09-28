@@ -4,9 +4,10 @@ import Button from "antd/lib/button";
 import PropTypes from "prop-types";
 import { TweenOneGroup } from "rc-tween-one";
 import { Link } from "react-router-dom";
-import "./surprise.css";
+import Map from "../map";
+import "./details.css";
 
-export default class surprise extends React.Component {
+export default class details extends React.Component {
   static propTypes = {
     className: PropTypes.string
   };
@@ -19,15 +20,20 @@ export default class surprise extends React.Component {
     super(props);
     this.columns = [
       {
-        title: "驚喜優惠名稱",
-        dataIndex: "surprisename",
-        key: "surprisename"
+        title: "地標資訊名稱",
+        dataIndex: "detailsname",
+        key: "detailsname"
       },
-      { title: "驚喜優惠設置處", dataIndex: "surpriselocation", key: "surpriselocation" },
+      { title: "地標資訊類型", dataIndex: "detailstype", key: "detailstype" },
       {
-        title: "驚喜優惠獎勵",
-        dataIndex: "surpriseprize",
-        key: "surpriseprize"
+        title: "地標資訊經緯度",
+        dataIndex: "detailslocation",
+        key: "detailslocation"
+      },
+      {
+        title: "地標資訊經緯度",
+        dataIndex: "detailslocation",
+        key: "detailslocation"
       },
       {
         title: "刪除",
@@ -65,15 +71,33 @@ export default class surprise extends React.Component {
     this.data = [
       {
         key: 1,
-        surprisename: "歡迎來到忠烈祠",
-        surpriselocation: "鳥居",
-        surpriseprize: "特約商店九折"
+        detailsname: "豪雨特報",
+        detailstype: "14:00~16:00",
+        detailslocation: "全園區"
       },
       {
         key: 2,
-        surprisename: "守護神社的聖獸",
-        surpriselocation: "高麗犬",
-        surpriseprize: "市民卡紅利點數加倍送"
+        detailsname: "本殿有毒蛇出沒",
+        detailstype: "17:00",
+        detailslocation: "本殿"
+      },
+      {
+        key: 3,
+        detailsname: "東司化妝室維修",
+        detailstype: "11:00~1300",
+        detailslocation: "東司"
+      },
+      {
+        key: 4,
+        detailsname: "突有落石",
+        detailstype: "14:00",
+        detailslocation: "枅垣與透塀"
+      },
+      {
+        key: 5,
+        detailsname: "社務所展覽",
+        detailstype: "13:00~1700  ",
+        detailslocation: "社務所"
       }
     ];
     this.currentPage = 1;
@@ -120,7 +144,7 @@ export default class surprise extends React.Component {
       <div>
         <div className={`${this.props.className}-action-bar`}>
           <Button type="primary">
-            <Link to="/dashboard/offer/broadcast/new">新增即時訊息</Link>
+            <Link to="/dashboard/details/new">新增地標資訊</Link>
           </Button>
         </div>
         <Table
@@ -131,6 +155,9 @@ export default class surprise extends React.Component {
           getBodyWrapper={this.getBodyWrapper}
           onChange={this.pageChange}
         />
+        <center>
+          <Map width="500" height="500" loc={input => this.getLoc(input)} />
+        </center>
       </div>
     );
   }

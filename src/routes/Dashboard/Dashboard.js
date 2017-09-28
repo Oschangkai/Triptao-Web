@@ -6,12 +6,14 @@ import SiderContent from "../../components/Dashboard/sider";
 import Breadcrumbs from "../../components/Dashboard/breadcrumb";
 import content from "../../components/Dashboard/content";
 import info from "../../components/Dashboard/content/info";
+import details from "../../components/Dashboard/content/details";
+import newDetails from "../../components/Dashboard/content/newDetails";
+import activity from "../../components/Dashboard/content/activity";
 import surprise from "../../components/Dashboard/content/surprise";
+import game from "../../components/Dashboard/content/game";
+import newgame from "../../components/Dashboard/content/newgame";
 import coupon from "../../components/Dashboard/content/coupon";
 import newcoupon from "../../components/Dashboard/content/newcoupon";
-import game from "../../components/Dashboard/content/game";
-import newDetails from "../../components/Dashboard/content/newDetails";
-import newgame from "../../components/Dashboard/content/newgame";
 import broadcast from "../../components/Dashboard/content/broadcast";
 
 import "./Dashboard.less";
@@ -38,7 +40,7 @@ export default class Dashboard extends React.Component {
               <SubMenu
                 title={
                   <span>
-                    <Icon type="user" />奧爾森林學堂
+                    <Icon type="user" />忠烈祠
                   </span>
                 }
               >
@@ -58,17 +60,13 @@ export default class Dashboard extends React.Component {
             <div className="content">
               <Switch>
                 <Route exact path="/dashboard/info" component={info} />
-                <Route
-                  exact
-                  path="/dashboard/details"
-                  component={content}
-                />
+                <Route exact path="/dashboard/details" component={details} />
                 <Route
                   exact
                   path="/dashboard/details/new"
                   component={newDetails}
                 />
-                <Route exact path="/dashboard/activity" component={content} />
+                <Route exact path="/dashboard/activity" component={activity} />
                 <Route
                   exact
                   path="/dashboard/activity/new"

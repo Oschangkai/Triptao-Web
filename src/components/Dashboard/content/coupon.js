@@ -6,7 +6,7 @@ import { TweenOneGroup } from "rc-tween-one";
 import { Link } from "react-router-dom";
 import "./broadcast.css";
 
-export default class game extends React.Component {
+export default class coupon extends React.Component {
   static propTypes = {
     className: PropTypes.string
   };
@@ -67,25 +67,25 @@ export default class game extends React.Component {
         key: 1,
         couponcontent: "搭乘公車半價優惠",
         couponstore: "其他",
-        coupondeadline: "2018.12.31"
+        coupondeadline: "2018/12/31"
       },
       {
         key: 2,
         couponcontent: "味全埔心牧場門票九折",
         couponstore: "味全埔心牧場",
-        coupondeadline: "2018.3.31"
+        coupondeadline: "2018/3/31"
       },
       {
         key: 3,
         couponcontent: "特約商店九折",
         couponstore: "其他",
-        coupondeadline: "2018.12.31"
+        coupondeadline: "2018/12/31"
       },
       {
         key: 4,
         couponcontent: "市民卡紅利點數加倍送",
         couponstore: "其他",
-        coupondeadline: "2017.11.30"
+        coupondeadline: "2017/11/30"
       }
     ];
     this.currentPage = 1;

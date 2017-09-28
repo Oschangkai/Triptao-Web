@@ -1,0 +1,328 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Test</title>
+    <style type="text/css">
+        canvas {
+            border: 1px solid blue;
+        }
+
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <canvas id='canvas' style='border: 1px solid;width:1350px;height:900px'>
+        sorry
+    </canvas>
+    <script>
+        var canvas = document.querySelector('canvas');
+        canvas.width = canvas.scrollWidth;
+        canvas.height = canvas.scrollHeight;
+
+        var c = canvas.getContext('2d');
+
+        var hair_C = new Image();
+        hair_C.onload = function () {
+            c.drawImage(hair_C, 0, 150, 960, 540);
+        }
+        hair_C.src = 'https://i.imgur.com/ceNBng4.png';
+
+        var body_C = new Image();
+        body_C.onload = function () {
+            c.drawImage(body_C, 0, 150,960,540);
+        }
+        body_C.src = 'https://i.imgur.com/ddqV4fJ.png';
+
+        var skin_C = new Image();
+        skin_C.onload = function () {
+            c.drawImage(skin_C, 0, 150,960,540);
+        }
+        skin_C.src = 'https://i.imgur.com/b9rD9c0.png';
+
+        var eye_C = new Image();
+        eye_C.onload = function () {
+            c.drawImage(eye_C, 0, 150, 960, 540);
+        }
+        eye_C.src = 'https://i.imgur.com/zOVJLZM.png';
+
+        var mouth_C = new Image();
+        mouth_C.onload = function () {
+            c.drawImage(mouth_C, 0, 150, 960, 540);
+        }
+        mouth_C.src = 'https://i.imgur.com/52VthE2.png';
+
+        c.font = "normal normal 70px monospace";
+        c.fillStyle = "#006897";
+        c.fillText('啊我測試看看ARBCD', 200, 800);
+
+
+        var hair_num = 1;                                                   //頭毛
+
+        c.beginPath();
+        c.arc(900, 100, 50, 0, Math.PI * 2, false);
+        c.fillStyle = "#be5834";
+        c.fill();
+        c.addHitRegion({ id: 'hair_brown' });
+        canvas.addEventListener('mousedown', function (e) {
+            if (e.region == 'hair_brown') {
+                console.log("hair_brown");
+                hair_num = 1;
+                funhair();
+            }
+        });
+
+        c.beginPath();
+        c.arc(1000, 100, 50, 0, Math.PI * 2, false);
+        c.fillStyle = "#f5bf00";
+        c.fill();
+        c.addHitRegion({ id: 'hair_gold' });
+        canvas.addEventListener('mousedown', function (e) {
+            if (e.region == 'hair_gold') {
+                console.log("hair_gold");
+                hair_num = 2;
+                funhair();
+            }
+        });
+
+        c.beginPath();
+        c.arc(1100, 100, 50, 0, Math.PI * 2, false);
+        c.fillStyle = "#f700af";
+        c.fill();
+        c.addHitRegion({ id: 'hair_pink' });
+        canvas.addEventListener('mousedown', function (e) {
+            if (e.region == 'hair_pink') {
+                console.log("hair_pink");
+                hair_num = 3;
+                funhair();
+            }
+        });
+
+        var body_num = 1;                                               //毛
+
+        c.beginPath();
+        c.arc(900, 200, 50, 0, Math.PI * 2, false);
+        c.fillStyle = "#be5834";
+        c.fill();
+        c.addHitRegion({ id: 'body_brown' });
+        canvas.addEventListener('mousedown', function (e) {
+            if (e.region == 'body_brown') {
+                console.log("body_brown");
+                body_num = 1;
+                funbody();
+            }
+        });
+
+        c.beginPath();
+        c.arc(1000, 200, 50, 0, Math.PI * 2, false);
+        c.fillStyle = "#f5bf00";
+        c.fill();
+        c.addHitRegion({ id: 'body_gold' });
+        canvas.addEventListener('mousedown', function (e) {
+            if (e.region == 'body_gold') {
+                console.log("body_gold");
+                body_num = 2;
+                funbody();
+            }
+        });
+
+        c.beginPath();
+        c.arc(1100, 200, 50, 0, Math.PI * 2, false);
+        c.fillStyle = "#f700af";
+        c.fill();
+        c.addHitRegion({ id: 'body_pink' });
+        canvas.addEventListener('mousedown', function (e) {
+            if (e.region == 'body_pink') {
+                console.log("body_pink");
+                body_num = 3;
+                funbody();
+            }
+        });
+
+        var skin_num = 1;                                               //皮膚
+
+        c.beginPath();
+        c.arc(900, 300, 50, 0, Math.PI * 2, false);
+        c.fillStyle = "#feedde";
+        c.fill();
+        c.addHitRegion({ id: 'skin_white' });
+        canvas.addEventListener('mousedown', function (e) {
+            if (e.region == 'skin_white') {
+                console.log("skin_white");
+                skin_num = 1;
+                funskin();
+            }
+        });
+
+        c.beginPath();
+        c.arc(1000, 300, 50, 0, Math.PI * 2, false);
+        c.fillStyle = "#e0b1b0";
+        c.fill();
+        c.addHitRegion({ id: 'skin_pink' });
+        canvas.addEventListener('mousedown', function (e) {
+            if (e.region == 'skin_pink') {
+                console.log("skin_pink");
+                skin_num = 2;
+                funskin();
+            }
+        });
+
+        var eye_num = 1;                                               //眼睛
+
+        c.beginPath();
+        c.arc(900, 400, 50, 0, Math.PI * 2, false);
+        c.fillStyle = "#000000";
+        c.fill();
+        c.addHitRegion({ id: 'eye_black' });
+        canvas.addEventListener('mousedown', function (e) {
+            if (e.region == 'eye_black') {
+                console.log("eye_black");
+                eye_num = 1;
+                funeye();
+            }
+        });
+
+        c.beginPath();
+        c.arc(1000, 400, 50, 0, Math.PI * 2, false);
+        c.fillStyle = "#1f9aff";
+        c.fill();
+        c.addHitRegion({ id: 'eye_blue' });
+        canvas.addEventListener('mousedown', function (e) {
+            if (e.region == 'eye_blue') {
+                console.log("eye_blue");
+                eye_num = 2;
+                funeye();
+            }
+        });
+
+        var mouth_num = 1;                                               //嘴
+
+        c.beginPath();
+        c.arc(900, 500, 50, 0, Math.PI * 2, false);
+        c.fillStyle = "#000000";
+        c.fill();
+        c.addHitRegion({ id: 'mouth_black' });
+        canvas.addEventListener('mousedown', function (e) {
+            if (e.region == 'mouth_black') {
+                console.log("mouth_black");
+                mouth_num = 1;
+                funmouth();
+            }
+        });
+
+        c.beginPath();
+        c.arc(1000, 500, 50, 0, Math.PI * 2, false);
+        c.fillStyle = "#f50000";
+        c.fill();
+        c.addHitRegion({ id: 'mouth_red' });
+        canvas.addEventListener('mousedown', function (e) {
+            if (e.region == 'mouth_red') {
+                console.log("mouth_red");
+                mouth_num = 2;
+                funmouth();
+            }
+        });
+
+        function funhair() {                                 //頭毛顏色
+            if (hair_num == 1) {
+                var hair_C = new Image();
+                hair_C.onload = function () {
+                    c.drawImage(hair_C, 0, 150, 960, 540);
+                }
+                hair_C.src = 'https://i.imgur.com/ceNBng4.png';
+                funbody();
+            }
+            if (hair_num == 2) {
+                var hair_C = new Image();
+                hair_C.onload = function () {
+                    c.drawImage(hair_C, 0, 150, 960, 540);
+                }
+                hair_C.src = 'https://i.imgur.com/ZUUNEmi.png';
+                funbody();
+            }
+            if (hair_num == 3) {
+                var hair_C = new Image();
+                hair_C.onload = function () {
+                    c.drawImage(hair_C, 0, 150, 960, 540);
+                }
+                hair_C.src = 'https://i.imgur.com/AdSfb0Y.png';
+                funbody();
+            }
+        }
+        function funbody() {                                    //毛顏色
+            if (body_num == 1) {
+                var body_C = new Image();
+                body_C.onload = function () {
+                    c.drawImage(body_C, 0, 150, 960, 540);
+                }
+                body_C.src = 'https://i.imgur.com/ddqV4fJ.png';
+            }
+            if (body_num == 2) {
+                var body_C = new Image();
+                body_C.onload = function () {
+                    c.drawImage(body_C, 0, 150, 960, 540);
+                }
+                body_C.src = 'https://i.imgur.com/tORL07U.png';
+            }
+            if (body_num == 3) {
+                var body_C = new Image();
+                body_C.onload = function () {
+                    c.drawImage(body_C, 0, 150, 960, 540);
+                }
+                body_C.src = 'https://i.imgur.com/wwAjHkQ.png';
+            }
+        }
+        function funskin() {                                 //皮膚顏色
+            if (skin_num == 1) {
+                var skin_C = new Image();
+                skin_C.onload = function () {
+                    c.drawImage(skin_C, 0, 150, 960, 540);
+                }
+                skin_C.src = 'https://i.imgur.com/b9rD9c0.png';
+            }
+            if (skin_num == 2) {
+                var skin_C = new Image();
+                skin_C.onload = function () {
+                    c.drawImage(skin_C, 0, 150, 960, 540);
+                }
+                skin_C.src = 'https://i.imgur.com/FRatla5.png';
+            }
+        }
+        function funeye() {                                 //眼睛顏色
+            if (eye_num == 1) {
+                var eye_C = new Image();
+                eye_C.onload = function () {
+                    c.drawImage(eye_C, 0, 150, 960, 540);
+                }
+                eye_C.src = 'https://i.imgur.com/zOVJLZM.png';
+            }
+            if (eye_num == 2) {
+                var eye_C = new Image();
+                eye_C.onload = function () {
+                    c.drawImage(eye_C, 0, 150, 960, 540);
+                }
+                eye_C.src = 'https://i.imgur.com/lqfjoLp.png';
+            }
+        }
+        function funmouth() {                                 //眼睛顏色
+            if (mouth_num == 1) {
+                var mouth_C = new Image();
+                mouth_C.onload = function () {
+                    c.drawImage(mouth_C, 0, 150, 960, 540);
+                }
+                mouth_C.src = 'https://i.imgur.com/52VthE2.png';
+            }
+            if (mouth_num == 2) {
+                var mouth_C = new Image();
+                mouth_C.onload = function () {
+                    c.drawImage(mouth_C, 0, 150, 960, 540);
+                }
+                mouth_C.src = 'https://i.imgur.com/UqPOFQ8.png';
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -4,9 +4,9 @@ import Button from "antd/lib/button";
 import PropTypes from "prop-types";
 import { TweenOneGroup } from "rc-tween-one";
 import { Link } from "react-router-dom";
-import "./surprise.css";
+import "./activity.css";
 
-export default class surprise extends React.Component {
+export default class activity extends React.Component {
   static propTypes = {
     className: PropTypes.string
   };
@@ -19,16 +19,12 @@ export default class surprise extends React.Component {
     super(props);
     this.columns = [
       {
-        title: "驚喜優惠名稱",
-        dataIndex: "surprisename",
-        key: "surprisename"
+        title: "活動名稱",
+        dataIndex: "activityname",
+        key: "activityname"
       },
-      { title: "驚喜優惠設置處", dataIndex: "surpriselocation", key: "surpriselocation" },
-      {
-        title: "驚喜優惠獎勵",
-        dataIndex: "surpriseprize",
-        key: "surpriseprize"
-      },
+      { title: "活動時間", dataIndex: "activitytime", key: "activitytime" },
+
       {
         title: "刪除",
         dataIndex: "",
@@ -65,15 +61,18 @@ export default class surprise extends React.Component {
     this.data = [
       {
         key: 1,
-        surprisename: "歡迎來到忠烈祠",
-        surpriselocation: "鳥居",
-        surpriseprize: "特約商店九折"
+        activityname: "桃園忠烈祠暨神社文化園區仲夏祝福祭",
+        activitytime: "2017/8/20"
       },
       {
         key: 2,
-        surprisename: "守護神社的聖獸",
-        surpriselocation: "高麗犬",
-        surpriseprize: "市民卡紅利點數加倍送"
+        activityname: "祭孔習儀",
+        activitytime: "2017/9/24"
+      },
+      {
+        key: 3,
+        activityname: "釋奠典禮",
+        activitytime: "2017/9/28"
       }
     ];
     this.currentPage = 1;
@@ -120,7 +119,7 @@ export default class surprise extends React.Component {
       <div>
         <div className={`${this.props.className}-action-bar`}>
           <Button type="primary">
-            <Link to="/dashboard/offer/broadcast/new">新增即時訊息</Link>
+            <Link to="/dashboard/activity/new">新增活動資訊</Link>
           </Button>
         </div>
         <Table

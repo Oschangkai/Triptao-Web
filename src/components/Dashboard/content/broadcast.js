@@ -6,7 +6,7 @@ import { TweenOneGroup } from "rc-tween-one";
 import { Link } from "react-router-dom";
 import "./broadcast.css";
 
-export default class game extends React.Component {
+export default class broadcast extends React.Component {
   static propTypes = {
     className: PropTypes.string
   };
