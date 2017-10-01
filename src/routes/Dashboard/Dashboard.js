@@ -16,11 +16,12 @@ import coupon from "../../components/Dashboard/content/coupon";
 import newcoupon from "../../components/Dashboard/content/newcoupon";
 import broadcast from "../../components/Dashboard/content/broadcast";
 
+
 import "./Dashboard.less";
 
 const { Header, Content, Footer, Sider } = Layout;
 const SubMenu = Menu.SubMenu;
-
+<details sayhey="hey"/>
 export default class Dashboard extends React.Component {
   state = {};
 

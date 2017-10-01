@@ -1,10 +1,13 @@
 import React from "react";
-import { Table, Icon } from "antd";
+import { Table, Button } from "antd";
+import { Link } from "react-router-dom";
 import Map from "../map";
 import "./details.css";
 
-export default class details extends React.Component {
 
+
+
+export default class details extends React.Component {
   constructor(props) {
     super(props);
     this.columns = [
@@ -29,7 +32,7 @@ export default class details extends React.Component {
         key: "limit"
       },
       {
-        title: "經/緯度",
+        title: "經,緯度",
         dataIndex: "location",
         key: "location"
       },
@@ -50,12 +53,12 @@ export default class details extends React.Component {
 
     this.data = [
       {
-        key: 1,        
+        key: 1,
         type: "設施",
         name: "拜殿",
         time: "09:00 ~ 17:00",
-        limit: "無",
-        location: ""
+        limit: "周圍草皮維護中，請勿隨意踐踏",
+        location: "121.3253326,25.0063972"
       },
       {
         key: 2,
@@ -63,7 +66,7 @@ export default class details extends React.Component {
         name: "高麗犬",
         time: "09:00 ~ 17:00",
         limit: "請勿惡意損毀",
-        location: ""
+        location: "121.3251877,25.0063229"
       },
       {
         key: 3,
@@ -71,7 +74,7 @@ export default class details extends React.Component {
         name: "鳥居",
         time: "09:00 ~ 17:00",
         limit: "無",
-        location: ""
+        location: "121.3250198,25.0060501"
       }
     ];
     this.state = {
@@ -85,10 +88,28 @@ export default class details extends React.Component {
     this.setState({ data });
   };
 
+  getLoc = loc => {
+    this.setState({
+      lat: loc.lat,
+      lng: loc.lng
+    });
+    console.log(loc);
+  };
+
   render() {
     return (
       <div>
-        <Table columns={this.columns} dataSource={this.data} />
+        <Button type="primary" className="button">
+          <Link to="details/new">{this.props.sayhey}</Link>
+        </Button>
+        <Table
+          columns={this.columns}
+          dataSource={this.data}
+          className="table"
+        />
+        <center>
+          <Map width="500" height="500" loc={input => this.getLoc(input)} />
+        </center>
       </div>
     );
   }
