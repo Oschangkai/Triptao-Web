@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Radio, Input, Form, Upload, Icon, message } from "antd";
+import { Link } from "react-router-dom";
 import Map from "../map";
 
 const RadioGroup = Radio.Group;
@@ -256,9 +257,11 @@ export default class newDetails extends React.Component {
           <Map width="500" height="500" loc={input => this.getLoc(input)} />
         </center>
         <FormItem {...tailFormItemLayout}>
-          <Button type="primary" htmlType="submit">
-            送出
-          </Button>
+          <Link to="/dashboard/offer/game">
+            <Button type="primary" htmlType="submit">
+              送出
+            </Button>
+          </Link>
         </FormItem>
       </Form>
     );

@@ -6,7 +6,7 @@ import SiderContent from "../../components/Dashboard/sider";
 import Breadcrumbs from "../../components/Dashboard/breadcrumb";
 import content from "../../components/Dashboard/content";
 import info from "../../components/Dashboard/content/info";
-import details from "../../components/Dashboard/content/details";
+import Details from "../../components/Dashboard/content/details";
 import newDetails from "../../components/Dashboard/content/newDetails";
 import activity from "../../components/Dashboard/content/activity";
 import surprise from "../../components/Dashboard/content/surprise";
@@ -21,12 +21,13 @@ import "./Dashboard.less";
 
 const { Header, Content, Footer, Sider } = Layout;
 const SubMenu = Menu.SubMenu;
-<details sayhey="hey"/>
+
 export default class Dashboard extends React.Component {
   state = {};
 
   render() {
     return (
+  
       <Layout>
         <Sider breakpoint="md" collapsible style={{ background: "#fff" }}>
           <SiderContent collapsed={this.collapsed} />
@@ -61,7 +62,8 @@ export default class Dashboard extends React.Component {
             <div className="content">
               <Switch>
                 <Route exact path="/dashboard/info" component={info} />
-                <Route exact path="/dashboard/details" component={details} />
+                <Route exact path="/dashboard/details"　component={Details}/>
+                
                 <Route
                   exact
                   path="/dashboard/details/new"
@@ -109,8 +111,10 @@ export default class Dashboard extends React.Component {
                   path="/dashboard/broadcast/new"
                   component={content}
                 />
+
                 <Route render={() => <span>Hi</span>} />
               </Switch>
+            
             </div>
           </Content>
           <Footer style={{ textAlign: "center" }}>

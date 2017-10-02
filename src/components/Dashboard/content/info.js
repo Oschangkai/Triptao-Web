@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Radio, Input, Form, Avatar } from "antd";
+import { Button, Radio, Input, Form, Avatar, Modal } from "antd";
 import { Link } from "react-router-dom";
 
 const FormItem = Form.Item;
@@ -76,6 +76,13 @@ const categoryRadio = Object.entries(category).map(el => {
   );
 });
 
+function success() {
+  Modal.success({
+    title: "儲存成功",
+    okText: "確認"
+  });
+}
+
 export default class info extends React.Component {
   constructor(props) {
     super(props);
@@ -112,7 +119,7 @@ export default class info extends React.Component {
           <Avatar size="large" src="https://i.imgur.com/jvRgWB3.jpg" />
         </FormItem>
         <FormItem {...formItemLayout} label="AR寶寶">
-          <img src={""} alt="AR doll" />
+          <Link to="./AR">AR</Link>
         </FormItem>
 
         <FormItem {...formItemLayout} label="園區名稱">
@@ -196,7 +203,7 @@ export default class info extends React.Component {
         </FormItem>
 
         <FormItem {...tailFormItemLayout}>
-          <Button type="primary" htmlType="submit">
+          <Button type="primary" htmlType="submit" onClick={success}>
             更新資料
           </Button>
         </FormItem>

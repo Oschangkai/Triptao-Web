@@ -17,8 +17,6 @@ export default class game extends React.Component {
 
   constructor(props) {
     super(props);
-   
-
 
     this.columns = [
       { title: "關卡名稱", dataIndex: "gamename", key: "gamename" },
@@ -57,54 +55,25 @@ export default class game extends React.Component {
       { height: 0, duration: 200, ease: "easeOutQuad" }
     ];
 
-    let a = this.props.cheatdata;
-    if (a == 1) {
-      this.data = [
-        {
-          key: 1,
-          gamename: "了解故鄉之旅",
-          gamecontent: "迷你台灣、迷你亞洲",
-          gameprize: "歡迎蒞臨小人國"
-        },
-        {
-          key: 2,
-          gamename: "g7",
-          gamecontent: "h7",
-          gameprize: "I7"
-        },
-        {
-          key: 3,
-          gamename: "d7",
-          gamecontent: "e7",
-          gameprize: "f7"
-        },
-        {
-          key: 4,
-          gamename: "a7",
-          gamecontent: "b7",
-          gameprize: "c7"
-        }
-      ];
-      this.currentPage = 1;
-      this.newPage = 1;
-      this.state = {
-        data: this.data
-      };
-    } else {
-      this.data = [
-        {
-          key: 1,
-          gamename: "87boy",
-          gamecontent: "a",
-          gameprize: "a"
-        }
-      ];
-      this.currentPage = 1;
-      this.newPage = 1;
-      this.state = {
-        data: this.data
-      };
-    }
+    this.data = [
+      {
+        key: 1,
+        gamename: "壯士之旅",
+        gamecontent: "鳥居，高麗犬，銅馬，拜殿",
+        gameprize: "特約商店九折"
+      },
+      {
+        key: 2,
+        gamename: "回到過去",
+        gamecontent: "石燈籠，手水舍，社務所",
+        gameprize: "市民卡紅利點數加倍送"
+      }
+    ];
+    this.currentPage = 1;
+    this.newPage = 1;
+    this.state = {
+      data: this.data
+    };
   }
 
   onEnd = e => {
@@ -176,7 +145,6 @@ export default class game extends React.Component {
           getBodyWrapper={this.getBodyWrapper}
           onChange={this.pageChange}
         />
-
       </div>
     );
   }

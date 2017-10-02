@@ -4,10 +4,7 @@ import { Link } from "react-router-dom";
 import Map from "../map";
 import "./details.css";
 
-
-
-
-export default class details extends React.Component {
+export default class Details extends React.Component {
   constructor(props) {
     super(props);
     this.columns = [
@@ -45,7 +42,7 @@ export default class details extends React.Component {
             className="table-enter-leave-demo-delete"
             onClick={e => this.onDelete(record.key, e)}
           >
-            Delete
+            刪除
           </span>
         )
       }
@@ -54,6 +51,14 @@ export default class details extends React.Component {
     this.data = [
       {
         key: 1,
+        type: "地標",
+        name: "拜殿",
+        time: "09:00 ~ 17:00",
+        limit: "請勿惡意損毀",
+        location: "121.3251495,25.0060863"
+      },
+      {
+        key: 2,
         type: "設施",
         name: "拜殿",
         time: "09:00 ~ 17:00",
@@ -61,7 +66,7 @@ export default class details extends React.Component {
         location: "121.3253326,25.0063972"
       },
       {
-        key: 2,
+        key: 3,
         type: "地標",
         name: "高麗犬",
         time: "09:00 ~ 17:00",
@@ -69,7 +74,7 @@ export default class details extends React.Component {
         location: "121.3251877,25.0063229"
       },
       {
-        key: 3,
+        key: 4,
         type: "地標",
         name: "鳥居",
         time: "09:00 ~ 17:00",
@@ -77,6 +82,7 @@ export default class details extends React.Component {
         location: "121.3250198,25.0060501"
       }
     ];
+
     this.state = {
       data: this.data
     };
@@ -87,7 +93,6 @@ export default class details extends React.Component {
     const data = this.state.data.filter(item => item.key !== key);
     this.setState({ data });
   };
-
   getLoc = loc => {
     this.setState({
       lat: loc.lat,
@@ -100,7 +105,7 @@ export default class details extends React.Component {
     return (
       <div>
         <Button type="primary" className="button">
-          <Link to="details/new">{this.props.sayhey}</Link>
+          <Link to="details/new"> 新增地標資訊</Link>
         </Button>
         <Table
           columns={this.columns}

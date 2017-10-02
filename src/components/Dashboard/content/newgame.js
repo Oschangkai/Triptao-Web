@@ -1,239 +1,125 @@
 import React from "react";
-import { TreeSelect, Icon, Select } from "antd";
-import "./newgame.css";
+import { Button, Input, Form, Checkbox, Row, Col, Select } from "antd";
 import { Link } from "react-router-dom";
 
-const SHOW_PARENT = TreeSelect.SHOW_PARENT;
-
-const treeData = [
-  {
-    label: "迷你世界",
-    value: "0-0",
-    key: "0-0",
-    children: [
-      {
-        label: "獨角仙生態區",
-        value: "0-0-0",
-        key: "0-0-0"
-      },
-      {
-        label: "迷你台灣",
-        value: "0-0-1",
-        key: "0-0-1"
-      },
-      {
-        label: "迷你中國",
-        value: "0-0-2",
-        key: "0-0-2"
-      },
-      {
-        label: "迷你亞洲",
-        value: "0-0-3",
-        key: "0-0-3"
-      },
-      {
-        label: "迷你歐洲",
-        value: "0-0-4",
-        key: "0-0-4"
-      },
-      {
-        label: "迷你美洲",
-        value: "0-0-5",
-        key: "0-0-5"
-      }
-    ]
-  },
-  {
-    label: "歐洲室內樂園",
-    value: "0-1",
-    key: "0-1",
-    children: [
-      {
-        label: "兒童碰碰車",
-        value: "0-1-0",
-        key: "0-1-0"
-      },
-      {
-        label: "水道船",
-        value: "0-1-1",
-        key: "0-1-1"
-      },
-      {
-        label: "動感樂園",
-        value: "0-1-2",
-        key: "0-1-2"
-      },
-      {
-        label: "音樂馬車",
-        value: "0-1-3",
-        key: "0-1-3"
-      }
-    ]
-  },
-  {
-    label: "美洲探險樂園",
-    value: "0-2",
-    key: "0-2",
-    children: [
-      {
-        label: "擎天輪",
-        value: "0-2-0",
-        key: "0-2-0"
-      },
-      {
-        label: "大力士",
-        value: "0-2-1",
-        key: "0-2-1"
-      },
-      {
-        label: "嘟嘟車",
-        value: "0-2-2",
-        key: "0-2-2"
-      },
-      {
-        label: "吉普車",
-        value: "0-2-3",
-        key: "0-2-3"
-      },
-      {
-        label: "搖滾船",
-        value: "0-2-4",
-        key: "0-2-4"
-      },
-      {
-        label: "飛飛機",
-        value: "0-2-5",
-        key: "0-2-5"
-      },
-      {
-        label: "跳星星",
-        value: "0-2-6",
-        key: "0-2-6"
-      },
-      {
-        label: "摩天草莓",
-        value: "0-2-7",
-        key: "0-2-7"
-      },
-      {
-        label: "瘋狂急流",
-        value: "0-2-8",
-        key: "0-2-8"
-      },
-      {
-        label: "金剛大冒險",
-        value: "0-2-9",
-        key: "0-2-9"
-      },
-      {
-        label: "擎天氣墊遊戲區",
-        value: "0-2-10",
-        key: "0-2-10"
-      },
-      {
-        label: "採礦列車",
-        value: "0-2-11",
-        key: "0-2-11"
-      }
-    ]
-  },
-  {
-    label: "轟浪水樂園",
-    value: "0-3",
-    key: "0-3",
-    children: [
-      {
-        label: "轟浪",
-        value: "0-3-1",
-        key: "0-3-1"
-      }
-    ]
-  },
-  {
-    label: "遊園小火車",
-    value: "0-4",
-    key: "0-4"
-  },
-  {
-    label: "機器人歷險樂園",
-    value: "0-5",
-    key: "0-5"
-  },
-  {
-    label: "超好玩海世界氣墊樂園",
-    value: "0-6",
-    key: "0-6"
-  }
-];
+const FormItem = Form.Item;
 const Option = Select.Option;
+
+const formItemLayout = {
+  labelCol: {
+    xs: { span: 24 },
+    sm: { span: 3 },
+    xl: { span: 2 }
+  },
+  wrapperCol: {
+    xs: { span: 24 },
+    sm: { span: 16 },
+    xl: { span: 14 }
+  }
+};
+
+const tailFormItemLayout = {
+  wrapperCol: {
+    xs: {
+      span: 3,
+      offset: 21
+    },
+    sm: {
+      span: 2,
+      offset: 17
+    },
+    lg: {
+      span: 1,
+      offset: 18
+    },
+    xl: {
+      span: 1,
+      offset: 15
+    }
+  }
+};
+
+function onChange(checkedValues) {
+  console.log("checked = ", checkedValues);
+}
 
 function handleChange(value) {
   console.log(`selected ${value}`);
 }
 
 export default class Newgame extends React.Component {
-  state = {
-    value: []
-  };
-
-  onChange = value => {
-    console.log("onChange ", value, arguments);
-    this.setState({ value });
-  };
   render() {
-    const tProps = {
-      treeData,
-      value: this.state.value,
-      onChange: this.onChange,
-      treeCheckable: true,
-      showCheckedStrategy: SHOW_PARENT,
-      searchPlaceholder: "請選擇關卡內容",
-      style: {
-        width: 500
-      }
-    };
-
     return (
-      <div>
-        <span className="backtogame">
-          <Link to="/dashboard/offer/game">
-            <Icon type="rollback" />
-            回到闖關活動列表
-          </Link>
-        </span>
+      <Form>
+        <FormItem
+          {...formItemLayout}
+          style={{ paddingTop: 10, paddingLeft: 10 }}
+        >
+          <h1>新增闖關活動</h1>
+        </FormItem>
 
-        <li className="gamename">
-          關卡名稱 : &nbsp;
-          <input
-            type="text"
-            placeholder="請輸入闖關活動名稱"
-            className="gamenameinput"
-          />
-        </li>
-        <li className="selectgame">
-          關卡內容 : &nbsp;<TreeSelect {...tProps} />
-        </li>
-        <li className="selectcoupon">
-          {" "}
-          通關獎勵 : &nbsp;
+        <FormItem {...formItemLayout} label="闖關活動名稱">
+          <Input type="text" id="name" placeholder="請輸入闖關活動名稱" />
+        </FormItem>
+
+        <FormItem {...formItemLayout} label="請選擇關卡內容">
+          <Checkbox.Group onChange={onChange}>
+            <Row>
+              <Col span={8}>
+                <Checkbox value="A">石燈籠</Checkbox>
+              </Col>
+              <Col span={8}>
+                <Checkbox value="B">鳥居</Checkbox>
+              </Col>
+              <Col span={8}>
+                <Checkbox value="C">手水舍</Checkbox>
+              </Col>
+              <Col span={8}>
+                <Checkbox value="D">社務所</Checkbox>
+              </Col>
+              <Col span={8}>
+                <Checkbox value="E">參道</Checkbox>
+              </Col>
+              <Col span={8}>
+                <Checkbox value="F">銅馬</Checkbox>
+              </Col>
+              <Col span={8}>
+                <Checkbox value="G">高麗犬</Checkbox>
+              </Col>
+              <Col span={8}>
+                <Checkbox value="H">中門</Checkbox>
+              </Col>
+              <Col span={8}>
+                <Checkbox value="I">拜殿</Checkbox>
+              </Col>
+              <Col span={8}>
+                <Checkbox value="J">本殿</Checkbox>
+              </Col>
+            </Row>
+          </Checkbox.Group>
+        </FormItem>
+
+        <FormItem {...formItemLayout} label="關卡優惠券">
           <Select
-            defaultValue="請選擇通關獎勵"
-            style={{ width: 500 }}
+            style={{ width: 655 }}
+            placeholder="請選擇優惠券"
             onChange={handleChange}
           >
-            <Option value="0">在小人國留下紀念</Option>
-            <Option value="1">山珍海味全在小人國</Option>
-            <Option value="2">歡迎蒞臨小人國</Option>
+            <Option value="A">搭乘公車半價優惠</Option>
+            <Option value="B">味全埔心牧場門票九折</Option>
+            <Option value="C">特約商店九折</Option>
+            <Option value="D">市民卡紅利點數加倍送</Option>
           </Select>
-        </li>
-        <span className="addgame">
-          <center>
-            <Link to="/dashboard/offer/game">
-              <Icon type="plus-circle-o" />新增
-            </Link>
-          </center>
-        </span>
-      </div>
+        </FormItem>
+
+        <FormItem {...tailFormItemLayout}>
+          <Link to="/dashboard/offer/game">
+            <Button type="primary" htmlType="submit" onClick={this.success}>
+              新增
+            </Button>
+          </Link>
+        </FormItem>
+      </Form>
     );
   }
 }
