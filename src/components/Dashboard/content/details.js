@@ -1,6 +1,7 @@
 import React from "react";
 import { Table, Button } from "antd";
 import { Link } from "react-router-dom";
+import { TweenOneGroup } from "rc-tween-one";
 import Map from "../map";
 import "./details.css";
 
@@ -48,6 +49,24 @@ export default class Details extends React.Component {
       }
     ];
 
+    this.enterAnim = [
+      { opacity: 0, x: 30, backgroundColor: "#fffeee", duration: 0 },
+      {
+        height: 0,
+        duration: 200,
+        type: "from",
+        delay: 250,
+        ease: "easeOutQuad",
+        onComplete: this.onEnd
+      },
+      { opacity: 1, x: 0, duration: 250, ease: "easeOutQuad" },
+      { delay: 1000, backgroundColor: "#fff" }
+    ];
+    this.leaveAnim = [
+      { duration: 250, opacity: 0 },
+      { height: 0, duration: 200, ease: "easeOutQuad" }
+    ];
+
     this.data = [
       {
         key: 1,
@@ -93,6 +112,25 @@ export default class Details extends React.Component {
     const data = this.state.data.filter(item => item.key !== key);
     this.setState({ data });
   };
+
+  getBodyWrapper = body => {
+    if (this.currentPage !== this.newPage) {
+      this.currentPage = this.newPage;
+      return body;
+    }
+    return (
+      <TweenOneGroup
+        component="tbody"
+        className={body.props.className}
+        enter={this.enterAnim}
+        leave={this.leaveAnim}
+        appear={false}
+      >
+        {body.props.children}
+      </TweenOneGroup>
+    );
+  };
+
   getLoc = loc => {
     this.setState({
       lat: loc.lat,
@@ -109,8 +147,9 @@ export default class Details extends React.Component {
         </Button>
         <Table
           columns={this.columns}
-          dataSource={this.data}
+          dataSource={this.state.data}
           className="table"
+          getBodyWrapper={this.getBodyWrapper}
         />
         <center>
           <Map width="500" height="500" loc={input => this.getLoc(input)} />
