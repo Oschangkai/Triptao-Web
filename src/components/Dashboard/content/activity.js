@@ -1,37 +1,31 @@
 import React from "react";
-import Table from "antd/lib/table";
-import Button from "antd/lib/button";
-import PropTypes from "prop-types";
-import { TweenOneGroup } from "rc-tween-one";
+import { Table, Button } from "antd";
 import { Link } from "react-router-dom";
-import "./activity.css";
+import { TweenOneGroup } from "rc-tween-one";
+import Map from "../map";
+import "./details.css";
 
-export default class activity extends React.Component {
-  static propTypes = {
-    className: PropTypes.string
-  };
-
-  static defaultProps = {
-    className: "table-enter-leave-demo"
-  };
-
+export default class Details extends React.Component {
   constructor(props) {
     super(props);
     this.columns = [
       {
         title: "活動名稱",
-        dataIndex: "activityname",
-        key: "activityname"
+        dataIndex: "name",
+        key: "name"
       },
-      { title: "活動時間", dataIndex: "activitytime", key: "activitytime" },
-
+      {
+        title: "活動時間",
+        dataIndex: "time",
+        key: "time"
+      },
       {
         title: "刪除",
         dataIndex: "",
         key: "x",
         render: (text, record) => (
           <span
-            className={`${this.props.className}-delete`}
+            className="table-enter-leave-demo-delete"
             onClick={e => this.onDelete(record.key, e)}
           >
             刪除
@@ -45,7 +39,7 @@ export default class activity extends React.Component {
       {
         height: 0,
         duration: 200,
-        type: "from",
+        name: "from",
         delay: 250,
         ease: "easeOutQuad",
         onComplete: this.onEnd
@@ -61,30 +55,25 @@ export default class activity extends React.Component {
     this.data = [
       {
         key: 1,
-        activityname: "桃園忠烈祠暨神社文化園區仲夏祝福祭",
-        activitytime: "2017/8/20"
+        name: "桃園忠烈祠暨神社文化園區仲夏祝福祭",
+        time: "2017.8.20"
       },
       {
         key: 2,
-        activityname: "祭孔習儀",
-        activitytime: "2017/9/24"
+        name: "祭孔習儀",
+        time: "2017/9/24"
       },
       {
         key: 3,
-        activityname: "釋奠典禮",
-        activitytime: "2017/9/28"
+        name: "釋奠典禮",
+        time: "2017/9/28"
       }
     ];
-    this.currentPage = 1;
-    this.newPage = 1;
+
     this.state = {
       data: this.data
     };
   }
-  onEnd = e => {
-    const dom = e.target;
-    dom.style.height = "auto";
-  };
 
   onDelete = (key, e) => {
     e.preventDefault();
@@ -110,25 +99,17 @@ export default class activity extends React.Component {
     );
   };
 
-  pageChange = pagination => {
-    this.newPage = pagination.current;
-  };
-
   render() {
     return (
       <div>
-        <div className={`${this.props.className}-action-bar`}>
-          <Button type="primary">
-            <Link to="/dashboard/activity/new">新增活動資訊</Link>
-          </Button>
-        </div>
+        <Button type="primary" className="button">
+          <Link to="details/new"> 新增活動資訊</Link>
+        </Button>
         <Table
           columns={this.columns}
-          pagination={{ pageSize: 7 }}
           dataSource={this.state.data}
-          className={`${this.props.className}-table`}
+          className="table"
           getBodyWrapper={this.getBodyWrapper}
-          onChange={this.pageChange}
         />
       </div>
     );
