@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 import Auth from "./Auth";
 import Login from "./Login";
 import Register from "./Register";
@@ -13,7 +13,7 @@ export default () => (
       <Route exact path="/register" render={props => <Register {...props} />} />
       <Route exact path="/auth" render={props => <Auth {...props} />} />
       <Route path="/dashboard" render={props => <Dashboard {...props} />} />
-      <Route render={() => <span>Home Page</span>} />
+      <Route render={() => <span><Link to ="/dashboard">Home Page</Link></span>} />
     </Switch>
   </BrowserRouter>
 );

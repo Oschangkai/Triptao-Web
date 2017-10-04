@@ -2,7 +2,6 @@ import React from "react";
 import { Table, Button } from "antd";
 import { Link } from "react-router-dom";
 import { TweenOneGroup } from "rc-tween-one";
-import Map from "../map";
 import "./details.css";
 
 export default class Details extends React.Component {
