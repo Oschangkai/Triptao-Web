@@ -33,7 +33,8 @@ export default class Map extends React.Component {
     const marker = new window.google.maps.Marker({
       position: { lat: 25.0060863, lng: 121.3251495 },
       map: map,
-      draggable: true
+      draggable: true,
+      animation: window.google.maps.Animation.DROP      
     });
     window.google.maps.event.addListener(marker, "dragend", () => {
       const val = {
@@ -50,11 +51,13 @@ export default class Map extends React.Component {
       [25.0060501, 121.3250198]
     ];
     var i = undefined;
-    var m = undefined;
     for (i = 0; i < positions.length; i++) {
-      var latlng = new window.google.maps.Latlng( positions[i][0],positions[i][1]);
-      m = new window.google.maps.Marker({
-        position: latlng,
+      //var latlng = new window.google.maps.Latlng(positions[i][0],positions[i][1]);
+      var m = new window.google.maps.Marker({
+        position: {
+          lat: positions[i][0],
+          lng: positions[i][1]
+        },
         map: map,
         animation: window.google.maps.Animation.DROP
       });
