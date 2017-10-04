@@ -45,7 +45,6 @@ export default class Map extends React.Component {
     });
 
     const positions = [
-      [25.0060863, 121.3251495],
       [25.0063972, 121.3253326],
       [25.0063229, 121.3251877],
       [25.0060501, 121.3250198]

@@ -13,7 +13,7 @@ export default () => (
       <Route exact path="/register" render={props => <Register {...props} />} />
       <Route exact path="/auth" render={props => <Auth {...props} />} />
       <Route path="/dashboard" render={props => <Dashboard {...props} />} />
-      <Route render={() => <span><Link to ="/dashboard">Home Page</Link></span>} />
+      <Route render={() => <span><Link to ="/dashboard">Start</Link></span>} />
     </Switch>
   </BrowserRouter>
 );
