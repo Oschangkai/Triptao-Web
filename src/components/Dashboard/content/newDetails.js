@@ -257,7 +257,7 @@ export default class newDetails extends React.Component {
           <Map width="500" height="500" loc={input => this.getLoc(input)} />
         </center>
         <FormItem {...tailFormItemLayout}>
-          <Link to="/dashboard/offer/game">
+          <Link to="/dashboard/Details">
             <Button type="primary" htmlType="submit">
               送出
             </Button>

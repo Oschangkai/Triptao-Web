@@ -102,7 +102,7 @@ export default class Details extends React.Component {
     return (
       <div>
         <Button type="primary" className="button">
-          <Link to="details/new"> 新增活動資訊</Link>
+          <Link to="/dashboard/activity"> 新增活動資訊</Link>
         </Button>
         <Table
           columns={this.columns}
