@@ -138,7 +138,7 @@ export default class broadcast extends React.Component {
       <div>
         <div className={`${this.props.className}-action-bar`}>
           <Button type="primary">
-            <Link to="/dashboard/broadcast">新增即時訊息</Link>
+            <Link to="/dashboard/">新增即時訊息</Link>
           </Button>
         </div>
         <Table

@@ -132,7 +132,7 @@ export default class coupon extends React.Component {
       <div>
         <div className={`${this.props.className}-action-bar`}>
           <Button type="primary">
-            <Link to="/dashboard/offer/coupon">新增優惠券</Link>
+            <Link to="/dashboard/">新增優惠券</Link>
           </Button>
         </div>
         <Table

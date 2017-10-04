@@ -120,7 +120,7 @@ export default class surprise extends React.Component {
       <div>
         <div className={`${this.props.className}-action-bar`}>
           <Button type="primary">
-            <Link to="/dashboard/offer/surprise">新增驚喜優惠</Link>
+            <Link to="/dashboard/">新增驚喜優惠</Link>
           </Button>
         </div>
         <Table
