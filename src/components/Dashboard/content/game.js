@@ -67,6 +67,12 @@ export default class game extends React.Component {
         gamename: "回到過去",
         gamecontent: "石燈籠，手水舍，社務所",
         gameprize: "市民卡紅利點數加倍送"
+      },
+      {
+        key: 3,
+        gamename: "初訪忠烈祠",
+        gamecontent: "石燈籠，鳥居，本殿",
+        gameprize: "搭乘公車半價優惠"
       }
     ];
     this.currentPage = 1;
