@@ -2,6 +2,7 @@
   "name": "triptao",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://triptao.kaiyeee.tw",
   "dependencies": {
     "antd": "^2.12.7",
     "nodemon": "^1.12.1",

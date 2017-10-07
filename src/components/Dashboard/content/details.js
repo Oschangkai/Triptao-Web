@@ -71,7 +71,7 @@ export default class Details extends React.Component {
       {
         key: 1,
         type: "地標",
-        name: "拜殿",
+        name: "銅馬",
         time: "09:00 ~ 17:00",
         limit: "請勿惡意損毀",
         location: "121.3251495,25.0060863"
