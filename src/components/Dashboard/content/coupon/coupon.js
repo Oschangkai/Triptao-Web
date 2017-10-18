@@ -1,22 +1,32 @@
 import React from "react";
-import { Table, Button } from "antd";
-import { Link } from "react-router-dom";
+import Table from "antd/lib/table";
+import Button from "antd/lib/button";
+import PropTypes from "prop-types";
 import { TweenOneGroup } from "rc-tween-one";
-import "./details.css";
+import { Link } from "react-router-dom";
 
-export default class Details extends React.Component {
+export default class coupon extends React.Component {
+  static propTypes = {
+    className: PropTypes.string
+  };
+
+  static defaultProps = {
+    className: "table-enter-leave-demo"
+  };
+
   constructor(props) {
     super(props);
     this.columns = [
       {
-        title: "活動名稱",
-        dataIndex: "name",
-        key: "name"
+        title: "優惠券內容",
+        dataIndex: "couponcontent",
+        key: "couponcontent"
       },
+      { title: "可使用店家", dataIndex: "couponstore", key: "couponstore" },
       {
-        title: "活動時間",
-        dataIndex: "time",
-        key: "time"
+        title: "截止日期",
+        dataIndex: "coupondeadline",
+        key: "coupondeadline"
       },
       {
         title: "刪除",
@@ -24,7 +34,7 @@ export default class Details extends React.Component {
         key: "x",
         render: (text, record) => (
           <span
-            className="table-enter-leave-demo-delete"
+            className={`${this.props.className}-delete`}
             onClick={e => this.onDelete(record.key, e)}
           >
             刪除
@@ -38,7 +48,7 @@ export default class Details extends React.Component {
       {
         height: 0,
         duration: 200,
-        name: "from",
+        type: "from",
         delay: 250,
         ease: "easeOutQuad",
         onComplete: this.onEnd
@@ -54,25 +64,39 @@ export default class Details extends React.Component {
     this.data = [
       {
         key: 1,
-        name: "桃園忠烈祠暨神社文化園區仲夏祝福祭",
-        time: "2017.8.20"
+        couponcontent: "搭乘公車半價優惠",
+        couponstore: "其他",
+        coupondeadline: "2018/12/31"
       },
       {
         key: 2,
-        name: "祭孔習儀",
-        time: "2017/9/24"
+        couponcontent: "味全埔心牧場門票九折",
+        couponstore: "味全埔心牧場",
+        coupondeadline: "2018/3/31"
       },
       {
         key: 3,
-        name: "釋奠典禮",
-        time: "2017/9/28"
+        couponcontent: "特約商店九折",
+        couponstore: "其他",
+        coupondeadline: "2018/12/31"
+      },
+      {
+        key: 4,
+        couponcontent: "市民卡紅利點數加倍送",
+        couponstore: "其他",
+        coupondeadline: "2017/11/30"
       }
     ];
-
+    this.currentPage = 1;
+    this.newPage = 1;
     this.state = {
       data: this.data
     };
   }
+  onEnd = e => {
+    const dom = e.target;
+    dom.style.height = "auto";
+  };
 
   onDelete = (key, e) => {
     e.preventDefault();
@@ -98,17 +122,25 @@ export default class Details extends React.Component {
     );
   };
 
+  pageChange = pagination => {
+    this.newPage = pagination.current;
+  };
+
   render() {
     return (
       <div>
-        <Button type="primary" className="button">
-          <Link to="/dashboard/"> 新增活動資訊</Link>
-        </Button>
+        <div className={`${this.props.className}-action-bar`}>
+          <Button type="primary">
+            <Link to="/dashboard/">新增優惠券</Link>
+          </Button>
+        </div>
         <Table
           columns={this.columns}
+          pagination={{ pageSize: 7 }}
           dataSource={this.state.data}
-          className="table"
+          className={`${this.props.className}-table`}
           getBodyWrapper={this.getBodyWrapper}
+          onChange={this.pageChange}
         />
       </div>
     );

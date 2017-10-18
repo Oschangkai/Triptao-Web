@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Radio, Input, Form, Upload, Icon, message } from "antd";
 import { Link } from "react-router-dom";
-import Map from "../map";
+import Map from "../../map";
 
 const RadioGroup = Radio.Group;
 const FormItem = Form.Item;

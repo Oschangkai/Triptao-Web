@@ -1,21 +1,9 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
 import { Menu, Layout, Breadcrumb, Icon } from "antd";
 
 import SiderContent from "../../components/Dashboard/sider";
 import Breadcrumbs from "../../components/Dashboard/breadcrumb";
-import content from "../../components/Dashboard/content";
-import info from "../../components/Dashboard/content/info";
-import Details from "../../components/Dashboard/content/details";
-import newDetails from "../../components/Dashboard/content/newDetails";
-import activity from "../../components/Dashboard/content/activity";
-import surprise from "../../components/Dashboard/content/surprise";
-import game from "../../components/Dashboard/content/game";
-import newgame from "../../components/Dashboard/content/newgame";
-import coupon from "../../components/Dashboard/content/coupon";
-import newcoupon from "../../components/Dashboard/content/newcoupon";
-import broadcast from "../../components/Dashboard/content/broadcast";
-
+import Contents from "../../components/Dashboard/content";
 
 import "./Dashboard.less";
 
@@ -27,7 +15,6 @@ export default class Dashboard extends React.Component {
 
   render() {
     return (
-  
       <Layout>
         <Sider breakpoint="md" collapsible style={{ background: "#fff" }}>
           <SiderContent collapsed={this.collapsed} />
@@ -60,61 +47,7 @@ export default class Dashboard extends React.Component {
               {Breadcrumbs(this.props)}
             </Breadcrumb>
             <div className="content">
-              <Switch>
-                <Route exact path="/dashboard/info" component={info} />
-                <Route exact path="/dashboard/details"　component={Details}/>
-                
-                <Route
-                  exact
-                  path="/dashboard/details/new"
-                  component={newDetails}
-                />
-                <Route exact path="/dashboard/activity" component={activity} />
-                <Route
-                  exact
-                  path="/dashboard/activity/new"
-                  component={content}
-                />
-                <Route
-                  exact
-                  path="/dashboard/offer/surprise"
-                  component={surprise}
-                />
-                <Route
-                  exact
-                  path="/dashboard/offer/surprise/new"
-                  component={content}
-                />
-                <Route
-                  exact
-                  path="/dashboard/offer/coupon"
-                  component={coupon}
-                />
-                <Route
-                  exact
-                  path="/dashboard/offer/coupon/new"
-                  component={newcoupon}
-                />
-                <Route exact path="/dashboard/offer/game" component={game} />
-                <Route
-                  exact
-                  path="/dashboard/offer/game/new"
-                  component={newgame}
-                />
-                <Route
-                  exact
-                  path="/dashboard/broadcast"
-                  component={broadcast}
-                />
-                <Route
-                  exact
-                  path="/dashboard/broadcast/new"
-                  component={content}
-                />
-
-                <Route render={() => <span>Hi</span>} />
-              </Switch>
-            
+              <Contents />
             </div>
           </Content>
           <Footer style={{ textAlign: "center" }}>

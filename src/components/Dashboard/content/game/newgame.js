@@ -101,7 +101,6 @@ export default class Newgame extends React.Component {
 
         <FormItem {...formItemLayout} label="關卡優惠券">
           <Select
-            style={{ width: 655 }}
             placeholder="請選擇優惠券"
             onChange={handleChange}
           >

@@ -1,0 +1,6 @@
+{
+  "name": "coupon",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./coupon.js"
+}
