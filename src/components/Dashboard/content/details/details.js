@@ -106,6 +106,11 @@ export default class Details extends React.Component {
       data: this.data
     };
   }
+  positions = [
+    { lat: 25.0063972, lng: 121.3253326 },
+    { lat: 25.0063229, lng: 121.3251877 },
+    { lat: 25.0060501, lng: 121.3250198 }
+  ];
 
   onDelete = (key, e) => {
     e.preventDefault();
@@ -152,7 +157,7 @@ export default class Details extends React.Component {
           getBodyWrapper={this.getBodyWrapper}
         />
         <center>
-          <Map width="500" height="500" loc={input => this.getLoc(input)} />
+          <Map positions={this.positions} />
         </center>
       </div>
     );
