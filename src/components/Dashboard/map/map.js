@@ -34,7 +34,7 @@ export default class Map extends React.Component {
       position: { lat: 25.0060863, lng: 121.3251495 },
       map: map,
       draggable: true,
-      animation: window.google.maps.Animation.DROP      
+      animation: window.google.maps.Animation.DROP
     });
     window.google.maps.event.addListener(marker, "dragend", () => {
       const val = {
