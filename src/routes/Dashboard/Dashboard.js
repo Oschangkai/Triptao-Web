@@ -16,10 +16,10 @@ export default class Dashboard extends React.Component {
   render() {
     return (
       <Layout>
-        <Sider breakpoint="md" collapsible style={{ background: "#fff" }}>
+        <Sider breakpoint="md" collapsible style={{ overflow: "auto", background: "#fff", position: "fixed", left: 0, height: "100vh"}}>
           <SiderContent collapsed={this.collapsed} />
         </Sider>
-        <Layout>
+        <Layout style={{marginLeft: 200}}>
           <Header>
             <Menu
               className="header-menu"
