@@ -1,20 +1,10 @@
 import React from "react";
-import Table from "antd/lib/table";
-import Button from "antd/lib/button";
-import PropTypes from "prop-types";
+import { Button, Table } from "antd";
 import { TweenOneGroup } from "rc-tween-one";
 import { Link } from "react-router-dom";
-import "./surprise.css";
+import "../table.less";
 
 export default class surprise extends React.Component {
-  static propTypes = {
-    className: PropTypes.string
-  };
-
-  static defaultProps = {
-    className: "table-enter-leave-demo"
-  };
-
   constructor(props) {
     super(props);
     this.columns = [
@@ -23,7 +13,11 @@ export default class surprise extends React.Component {
         dataIndex: "surprisename",
         key: "surprisename"
       },
-      { title: "驚喜優惠設置處", dataIndex: "surpriselocation", key: "surpriselocation" },
+      {
+        title: "驚喜優惠設置處",
+        dataIndex: "surpriselocation",
+        key: "surpriselocation"
+      },
       {
         title: "驚喜優惠獎勵",
         dataIndex: "surpriseprize",
@@ -35,7 +29,7 @@ export default class surprise extends React.Component {
         key: "x",
         render: (text, record) => (
           <span
-            className={`${this.props.className}-delete`}
+            className={`delete`}
             onClick={e => this.onDelete(record.key, e)}
           >
             刪除
@@ -118,16 +112,16 @@ export default class surprise extends React.Component {
   render() {
     return (
       <div>
-        <div className={`${this.props.className}-action-bar`}>
+        <div className={`action-bar`}>
           <Button type="primary">
             <Link to="/dashboard/">新增驚喜優惠</Link>
           </Button>
-        </div>
+        </div>${this.props.className}-
         <Table
           columns={this.columns}
           pagination={{ pageSize: 7 }}
           dataSource={this.state.data}
-          className={`${this.props.className}-table`}
+          className={`table`}
           getBodyWrapper={this.getBodyWrapper}
           onChange={this.pageChange}
         />

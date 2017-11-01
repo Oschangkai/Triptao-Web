@@ -1,23 +1,12 @@
 import React from "react";
 import { Button, Table } from "antd";
-import QueueAnim from "rc-queue-anim";
-import PropTypes from "prop-types";
 import { TweenOneGroup } from "rc-tween-one";
 import { Link } from "react-router-dom";
-import "./game.css";
+import "../table.less";
 
 export default class game extends React.Component {
-  static propTypes = {
-    className: PropTypes.string
-  };
-
-  static defaultProps = {
-    className: "table-enter-leave-demo"
-  };
-
   constructor(props) {
     super(props);
-
     this.columns = [
       { title: "關卡名稱", dataIndex: "gamename", key: "gamename" },
       { title: "關卡內容", dataIndex: "gamecontent", key: "gamecontent" },
@@ -28,7 +17,7 @@ export default class game extends React.Component {
         key: "x",
         render: (text, record) => (
           <span
-            className={`${this.props.className}-delete`}
+            className={`delete`}
             onClick={e => this.onDelete(record.key, e)}
           >
             刪除
@@ -50,7 +39,7 @@ export default class game extends React.Component {
       { opacity: 1, x: 0, duration: 250, ease: "easeOutQuad" },
       { delay: 1000, backgroundColor: "#fff" }
     ];
-    this.leaveAnim = [
+    this.leaveAnimchildren = [
       { duration: 250, opacity: 0 },
       { height: 0, duration: 200, ease: "easeOutQuad" }
     ];
@@ -118,27 +107,7 @@ export default class game extends React.Component {
   render() {
     return (
       <div>
-        <div className={this.props.className}>
-          <ul>
-            <li />
-            <li />
-            <li />
-            <li />
-            <li />
-          </ul>
-        </div>
-
-        <div className={`${this.props.className}-list`}>
-          <QueueAnim type="bottom" component="ul">
-            <li key="0" />
-            <li key="1" />
-            <li key="2" />
-            <li key="3" />
-            <li key="4" />
-          </QueueAnim>
-        </div>
-
-        <div className={`${this.props.className}-action-bar`}>
+        <div className={`action-bar`}>
           <Button type="primary">
             <Link to="/dashboard/offer/game/new">新增闖關活動</Link>
           </Button>
@@ -147,7 +116,7 @@ export default class game extends React.Component {
           columns={this.columns}
           pagination={{ pageSize: 7 }}
           dataSource={this.state.data}
-          className={`${this.props.className}-table`}
+          className={`table`}
           getBodyWrapper={this.getBodyWrapper}
           onChange={this.pageChange}
         />

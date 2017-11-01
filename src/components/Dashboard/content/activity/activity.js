@@ -1,8 +1,8 @@
 import React from "react";
-import { Table, Button } from "antd";
+import { Button, Table } from "antd";
 import { Link } from "react-router-dom";
 import { TweenOneGroup } from "rc-tween-one";
-import "../details.css";
+import "../table.less";
 
 export default class Details extends React.Component {
   constructor(props) {
@@ -101,13 +101,15 @@ export default class Details extends React.Component {
   render() {
     return (
       <div>
-        <Button type="primary" className="button">
-          <Link to="/dashboard/"> 新增活動資訊</Link>
-        </Button>
+        <div className={`action-bar`}>
+          <Button type="primary" className="button">
+            <Link to="/dashboard/"> 新增活動資訊</Link>
+          </Button>
+        </div>
         <Table
           columns={this.columns}
           dataSource={this.state.data}
-          className="table"
+          className={`table`}
           getBodyWrapper={this.getBodyWrapper}
         />
       </div>

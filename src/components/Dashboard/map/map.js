@@ -1,11 +1,13 @@
 import React from "react";
-//import Map from "../../map";
 import GoogleMap from "google-map-react";
 import "./map.less";
 
 const Marker = ({ text }) => <div className="place">{text}</div>;
 
 export default class Map extends React.Component {
+  static defaultProps = {
+    positions: []
+  };
   constructor(props) {
     super(props);
     this.state = {
@@ -13,12 +15,7 @@ export default class Map extends React.Component {
       zoom: 17,
       draggable: true, // Draggable Map
       lat: 25.0062605,
-      lng: 121.3252949,
-      positions: [
-        { lat: 25.0063972, lng: 121.3253326 },
-        { lat: 25.0063229, lng: 121.3251877 },
-        { lat: 25.0060501, lng: 121.3250198 }
-      ]
+      lng: 121.3252949
     };
   }
   markerIsMove = (childKey, childProps, mouse) => {
@@ -29,28 +26,17 @@ export default class Map extends React.Component {
     });
   };
   markerDidMove = (childKey, childProps, mouse) => {
-    this.setState({ draggable: true });
-    // function is just a stub to test callbacks
-    console.log("Marker Did Move", childKey, childProps, mouse);
+    if (childProps.isDraggalbe) {
+      this.setState({ draggable: true });
+      // function is just a stub to test callbacks
+      console.log("Marker Did Move", childKey, childProps, mouse);
+    }
   };
   _onChange = ({ center, zoom }) => {
     this.setState({
       zoom: zoom
     });
     console.log(this.state);
-  };
-  posMarker = positions => {
-    positions.map(point => {
-      console.log(point.lng);
-      return (
-        <Marker
-          text="HI"
-          key={point.lng + point.lat}
-          lat={point.lat}
-          lng={point.lng}
-        />
-      );
-    });
   };
   render() {
     return (
@@ -67,10 +53,24 @@ export default class Map extends React.Component {
           onChildMouseUp={this.markerDidMove}
           onChildMouseMove={this.markerIsMove}
         >
-          {this.props.positions.map(point => {
-            return <Marker text="HI" lat={point.lat} lng={point.lng} />;
+          {this.props.positions.map((point, index) => {
+            return (
+              <Marker
+                key={index}
+                text={index}
+                lat={point.lat}
+                lng={point.lng}
+                isDraggalbe={false}
+              />
+            );
           })}
-          <Marker text="HI" lat={this.state.lat} lng={this.state.lng} />
+          <Marker
+            key="999"
+            text="中"
+            lat={this.state.lat}
+            lng={this.state.lng}
+            isDraggalbe={true}
+          />
         </GoogleMap>
       </div>
     );

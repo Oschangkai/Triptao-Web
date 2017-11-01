@@ -1,9 +1,9 @@
 import React from "react";
-import { Table, Button } from "antd";
+import { Button, Table } from "antd";
 import { Link } from "react-router-dom";
 import { TweenOneGroup } from "rc-tween-one";
 import Map from "../../map";
-import "../details.css";
+import "../table.less";
 
 export default class Details extends React.Component {
   constructor(props) {
@@ -39,10 +39,7 @@ export default class Details extends React.Component {
         dataIndex: "",
         key: "x",
         render: (text, record) => (
-          <span
-            className="table-enter-leave-demo-delete"
-            onClick={e => this.onDelete(record.key, e)}
-          >
+          <span className="delete" onClick={e => this.onDelete(record.key, e)}>
             刪除
           </span>
         )
@@ -74,7 +71,7 @@ export default class Details extends React.Component {
         name: "銅馬",
         time: "09:00 ~ 17:00",
         limit: "請勿惡意損毀",
-        location: "121.3251495,25.0060863"
+        location: "121.3251495, 25.0060863"
       },
       {
         key: 2,
@@ -82,7 +79,7 @@ export default class Details extends React.Component {
         name: "拜殿",
         time: "09:00 ~ 17:00",
         limit: "周圍草皮維護中，請勿隨意踐踏",
-        location: "121.3253326,25.0063972"
+        location: "121.3253326, 25.0063972"
       },
       {
         key: 3,
@@ -90,7 +87,7 @@ export default class Details extends React.Component {
         name: "高麗犬",
         time: "09:00 ~ 17:00",
         limit: "請勿惡意損毀",
-        location: "121.3251877,25.0063229"
+        location: "121.3251877, 25.0063229"
       },
       {
         key: 4,
@@ -98,7 +95,7 @@ export default class Details extends React.Component {
         name: "鳥居",
         time: "09:00 ~ 17:00",
         limit: "無",
-        location: "121.3250198,25.0060501"
+        location: "121.3250198, 25.0060501"
       }
     ];
 
@@ -135,21 +132,14 @@ export default class Details extends React.Component {
       </TweenOneGroup>
     );
   };
-
-  getLoc = loc => {
-    this.setState({
-      lat: loc.lat,
-      lng: loc.lng
-    });
-    console.log(loc);
-  };
-
   render() {
     return (
       <div>
-        <Button type="primary" className="button">
-          <Link to="details/new">新增地標資訊</Link>
-        </Button>
+        <div className={`action-bar`}>
+          <Button type="primary" className="button">
+            <Link to="details/new">新增地標資訊</Link>
+          </Button>
+        </div>
         <Table
           columns={this.columns}
           dataSource={this.state.data}
