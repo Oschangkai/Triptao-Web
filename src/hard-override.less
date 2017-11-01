@@ -1,0 +1,48 @@
+@base-color: #e21756;
+.ant-btn-primary {
+  background-color: @base-color!important;
+  border-color: @base-color!important;
+}
+a {
+  color: @base-color;
+  &:link {
+    color: @base-color;
+  }
+  &:visited {
+    color: @base-color;
+  }
+  &:hover {
+    color: @base-color!important;
+  }
+  &:active {
+    color: @base-color!important;
+  }
+}
+.ant-input {
+  &:hover {
+    border-color: @base-color !important;
+  }
+  &:focus {
+    border-color: @base-color!important;
+    box-shadow: 0 0 0 2px rgba(226, 23, 86, 0.2) !important;
+  }
+}
+.ant-checkbox {
+  color: @base-color!important;
+  &:after {
+    border: 1px solid @base-color!important;
+  }
+  &:before {
+    border: 1px solid @base-color!important;
+  }
+}
+.ant-checkbox-input {
+  &:hover {
+    border: 1px solid @base-color!important;
+  }
+}
+.ant-checkbox-checked {
+  .ant-checkbox-inner {
+    background-color: @base-color!important;
+  }
+}

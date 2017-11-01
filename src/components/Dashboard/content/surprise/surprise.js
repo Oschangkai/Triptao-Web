@@ -116,7 +116,7 @@ export default class surprise extends React.Component {
           <Button type="primary">
             <Link to="/dashboard/">新增驚喜優惠</Link>
           </Button>
-        </div>${this.props.className}-
+        </div>
         <Table
           columns={this.columns}
           pagination={{ pageSize: 7 }}

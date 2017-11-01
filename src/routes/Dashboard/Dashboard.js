@@ -11,16 +11,40 @@ const { Header, Content, Footer, Sider } = Layout;
 const SubMenu = Menu.SubMenu;
 
 export default class Dashboard extends React.Component {
-  state = {};
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
+  onCollapse = collapsed => {
+    this.setState({ collapsed });
+  };
   render() {
     return (
       <Layout>
-        <Sider breakpoint="md" collapsible style={{ overflow: "auto", background: "#fff", position: "fixed", left: 0, height: "100vh"}}>
-          <SiderContent collapsed={this.collapsed} />
+        <Sider
+          breakpoint="md"
+          collapsible
+          className="sider"
+          collapsed={this.state.collapsed}
+          onCollapse={this.onCollapse}
+        >
+          <SiderContent />
         </Sider>
-        <Layout style={{marginLeft: 200}}>
-          <Header>
+        <Layout
+          className="right"
+          style={
+            this.state.collapsed ? { marginLeft: 64 } : { marginLeft: 200 }
+          }
+        >
+          <Header
+            className="header"
+            style={
+              this.state.collapsed
+                ? { width: "calc(100% - 64px)" }
+                : { width: "calc(100% - 200px)" }
+            }
+          >
             <Menu
               className="header-menu"
               selectedKeys={[this.state.current]}
@@ -42,7 +66,7 @@ export default class Dashboard extends React.Component {
               </SubMenu>
             </Menu>
           </Header>
-          <Content style={{ margin: "0 30px" }}>
+          <Content style={{ paddingTop: 64, margin: "0 30px" }}>
             <Breadcrumb style={{ margin: "12px 0" }}>
               {Breadcrumbs(this.props)}
             </Breadcrumb>

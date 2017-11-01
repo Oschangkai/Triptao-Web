@@ -6,7 +6,9 @@ module.exports = function override(config, env) {
     ["import", { libraryName: "antd", style: true }],
     config
   );
-  config = rewireLess(config, env);
+  config = rewireLess(config, env, {
+    modifyVars: { "@primary-color": "#E21756" }
+  });
 
   return config;
 };
