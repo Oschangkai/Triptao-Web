@@ -23,10 +23,7 @@ export default class Details extends React.Component {
         dataIndex: "",
         key: "x",
         render: (text, record) => (
-          <span
-            className="table-enter-leave-demo-delete"
-            onClick={e => this.onDelete(record.key, e)}
-          >
+          <span className="delete" onClick={e => this.onDelete(record.key, e)}>
             刪除
           </span>
         )

@@ -39,12 +39,13 @@ label.ant-checkbox-wrapper {
       border: 1px solid @base-color!important;
     }
   }
+  .ant-checkbox:hover > .ant-checkbox-inner {
+    border: 1px solid @base-color!important;
+  }
 }
 .ant-checkbox-input {
-  &:focus {
-    .ant-checkbox-inner {
-      border: 1px solid @base-color!important;
-    }
+  &:focus + .ant-checkbox-inner {
+    border: 1px solid @base-color!important;
   }
 }
 .ant-checkbox-checked {
