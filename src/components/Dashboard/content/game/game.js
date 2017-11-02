@@ -47,21 +47,9 @@ export default class game extends React.Component {
     this.data = [
       {
         key: 1,
-        gamename: "壯士之旅",
-        gamecontent: "鳥居，高麗犬，銅馬，拜殿",
+        gamename: "綠活之旅",
+        gamecontent: "溜滑梯、恐龍雕像、貓頭鷹福寶",
         gameprize: "特約商店九折"
-      },
-      {
-        key: 2,
-        gamename: "回到過去",
-        gamecontent: "石燈籠，手水舍，社務所",
-        gameprize: "市民卡紅利點數加倍送"
-      },
-      {
-        key: 3,
-        gamename: "初訪忠烈祠",
-        gamecontent: "石燈籠，鳥居，本殿",
-        gameprize: "搭乘公車半價優惠"
       }
     ];
     this.currentPage = 1;

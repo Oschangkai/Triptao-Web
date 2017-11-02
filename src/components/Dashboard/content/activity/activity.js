@@ -51,18 +51,13 @@ export default class Details extends React.Component {
     this.data = [
       {
         key: 1,
-        name: "桃園忠烈祠暨神社文化園區仲夏祝福祭",
-        time: "2017.8.20"
+        name: "惡搞恐龍趣味照片，打卡上傳活動",
+        time: "2017.12.20"
       },
       {
         key: 2,
-        name: "祭孔習儀",
-        time: "2017/9/24"
-      },
-      {
-        key: 3,
-        name: "釋奠典禮",
-        time: "2017/9/28"
+        name: "重陽節健行登山活動",
+        time: "2017.10.28"
       }
     ];
 

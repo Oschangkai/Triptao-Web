@@ -11,11 +11,11 @@ export default class Map extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      center: [25.0060863, 121.3251495],
+      center: [25.001810, 121.327567],
       zoom: 17,
       draggable: true, // Draggable Map
-      lat: 25.0062605,
-      lng: 121.3252949
+      lat: 25.001810,
+      lng:  121.327567
     };
   }
   markerIsMove = (childKey, childProps, mouse) => {
@@ -66,7 +66,7 @@ export default class Map extends React.Component {
           })}
           <Marker
             key="999"
-            text="中"
+            text="奧"
             lat={this.state.lat}
             lng={this.state.lng}
             isDraggalbe={true}

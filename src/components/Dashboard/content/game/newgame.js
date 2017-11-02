@@ -66,34 +66,25 @@ export default class Newgame extends React.Component {
           <Checkbox.Group onChange={onChange}>
             <Row>
               <Col span={8}>
-                <Checkbox value="A">石燈籠</Checkbox>
+                <Checkbox value="A">入口處</Checkbox>
               </Col>
               <Col span={8}>
-                <Checkbox value="B">鳥居</Checkbox>
+                <Checkbox value="B">樹屋</Checkbox>
               </Col>
               <Col span={8}>
-                <Checkbox value="C">手水舍</Checkbox>
+                <Checkbox value="C">溜滑梯</Checkbox>
               </Col>
               <Col span={8}>
-                <Checkbox value="D">社務所</Checkbox>
+                <Checkbox value="D">恐龍雕像</Checkbox>
               </Col>
               <Col span={8}>
-                <Checkbox value="E">參道</Checkbox>
+                <Checkbox value="E">步道</Checkbox>
               </Col>
               <Col span={8}>
-                <Checkbox value="F">銅馬</Checkbox>
+                <Checkbox value="F">烤肉區</Checkbox>
               </Col>
               <Col span={8}>
-                <Checkbox value="G">高麗犬</Checkbox>
-              </Col>
-              <Col span={8}>
-                <Checkbox value="H">中門</Checkbox>
-              </Col>
-              <Col span={8}>
-                <Checkbox value="I">拜殿</Checkbox>
-              </Col>
-              <Col span={8}>
-                <Checkbox value="J">本殿</Checkbox>
+                <Checkbox value="G">貓頭鷹福寶</Checkbox>
               </Col>
             </Row>
           </Checkbox.Group>
@@ -101,10 +92,10 @@ export default class Newgame extends React.Component {
 
         <FormItem {...formItemLayout} label="關卡優惠券">
           <Select placeholder="請選擇優惠券" onChange={handleChange}>
-            <Option value="A">搭乘公車半價優惠</Option>
-            <Option value="B">味全埔心牧場門票九折</Option>
-            <Option value="C">特約商店九折</Option>
-            <Option value="D">市民卡紅利點數加倍送</Option>
+            <Option value="A">熱狗小販全品項8折，滿200再送中杯可樂</Option>
+            <Option value="B">厭世恐龍模型買二送一，買三送二</Option>
+            <Option value="C">免費兌換福寶明信片</Option>
+            <Option value="D">桃園市長鄭文燦親筆簽名乙份</Option>
           </Select>
         </FormItem>
 

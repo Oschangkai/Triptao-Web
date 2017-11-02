@@ -59,15 +59,15 @@ export default class surprise extends React.Component {
     this.data = [
       {
         key: 1,
-        surprisename: "歡迎來到忠烈祠",
-        surpriselocation: "鳥居",
-        surpriseprize: "特約商店九折"
+        surprisename: "史前巨大的恐龍",
+        surpriselocation: "恐龍雕像",
+        surpriseprize: "厭世恐龍模型買二送一，買三送二"
       },
       {
         key: 2,
-        surprisename: "守護神社的聖獸",
-        surpriselocation: "高麗犬",
-        surpriseprize: "市民卡紅利點數加倍送"
+        surprisename: "博學多聞的貓頭鷹",
+        surpriselocation: "貓頭鷹福寶",
+        surpriseprize: "免費兌換福寶明信片"
       }
     ];
     this.currentPage = 1;

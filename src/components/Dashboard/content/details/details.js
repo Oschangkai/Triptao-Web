@@ -30,7 +30,7 @@ export default class Details extends React.Component {
         key: "limit"
       },
       {
-        title: "經,緯度",
+        title: "緯度 / 經度",
         dataIndex: "location",
         key: "location"
       },
@@ -67,35 +67,27 @@ export default class Details extends React.Component {
     this.data = [
       {
         key: 1,
-        type: "地標",
-        name: "銅馬",
-        time: "09:00 ~ 17:00",
-        limit: "請勿惡意損毀",
-        location: "121.3251495, 25.0060863"
+        type: "設施",
+        name: "溜滑梯",
+        time: "08：00~17：00",
+        limit: "小孩遊玩時需有成年人陪同",
+        location: "25.0022298 / 121.3277102"
       },
       {
         key: 2,
-        type: "設施",
-        name: "拜殿",
-        time: "09:00 ~ 17:00",
+        type: "地標",
+        name: "恐龍雕像",
+        time: "08：00~17：00",
         limit: "周圍草皮維護中，請勿隨意踐踏",
-        location: "121.3253326, 25.0063972"
+        location: "25.0018403 / 121.3277587"
       },
       {
         key: 3,
         type: "地標",
-        name: "高麗犬",
-        time: "09:00 ~ 17:00",
+        name: "貓頭鷹福寶",
+        time: "08：00~17：00",
         limit: "請勿惡意損毀",
-        location: "121.3251877, 25.0063229"
-      },
-      {
-        key: 4,
-        type: "地標",
-        name: "鳥居",
-        time: "09:00 ~ 17:00",
-        limit: "無",
-        location: "121.3250198, 25.0060501"
+        location: "25.0020623 / 121.3276226"
       }
     ];
 
@@ -104,9 +96,9 @@ export default class Details extends React.Component {
     };
   }
   positions = [
-    { lat: 25.0063972, lng: 121.3253326 },
-    { lat: 25.0063229, lng: 121.3251877 },
-    { lat: 25.0060501, lng: 121.3250198 }
+    { lat: 25.0022298, lng: 121.3277102 },
+    { lat: 25.0018403, lng: 121.3277587 },
+    { lat: 25.0020623, lng: 121.3276226 }
   ];
 
   onDelete = (key, e) => {

@@ -55,33 +55,33 @@ export default class broadcast extends React.Component {
     this.data = [
       {
         key: 1,
-        broadcastcontent: "豪雨特報",
+        broadcastcontent: "溜滑梯區有毒蛇出沒",
         broadcasttime: "14:00~16:00",
-        broadcastlocation: "全園區"
+        broadcastlocation: "溜滑梯"
       },
       {
         key: 2,
-        broadcastcontent: "本殿有毒蛇出沒",
-        broadcasttime: "17:00",
-        broadcastlocation: "本殿"
+        broadcastcontent: "樹屋維修",
+        broadcasttime: "13:00~17:00",
+        broadcastlocation: "樹屋"
       },
       {
         key: 3,
-        broadcastcontent: "東司化妝室維修",
-        broadcasttime: "11:00~1300",
-        broadcastlocation: "東司"
+        broadcastcontent: "樹枝修剪",
+        broadcasttime: "14:00~1700",
+        broadcastlocation: "全園區"
       },
       {
         key: 4,
-        broadcastcontent: "突有落石",
-        broadcasttime: "14:00",
-        broadcastlocation: "枅垣與透塀"
+        broadcastcontent: "烤肉區無剩餘位子",
+        broadcasttime: "11:30",
+        broadcastlocation: "烤肉區"
       },
       {
         key: 5,
-        broadcastcontent: "社務所展覽",
-        broadcasttime: "13:00~1700  ",
-        broadcastlocation: "社務所"
+        broadcastcontent: "步道維修",
+        broadcasttime: "10:00~12:00",
+        broadcastlocation: "步道"
       }
     ];
     this.currentPage = 1;

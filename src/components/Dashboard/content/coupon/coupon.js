@@ -54,27 +54,27 @@ export default class coupon extends React.Component {
     this.data = [
       {
         key: 1,
-        couponcontent: "搭乘公車半價優惠",
-        couponstore: "其他",
-        coupondeadline: "2018/12/31"
+        couponcontent: "熱狗小販全品項8折，滿200再送中杯可樂",
+        couponstore: "溜滑梯",
+        coupondeadline: "2017.11.30"
       },
       {
         key: 2,
-        couponcontent: "味全埔心牧場門票九折",
-        couponstore: "味全埔心牧場",
-        coupondeadline: "2018/3/31"
+        couponcontent: "厭世恐龍模型買二送一，買三送二",
+        couponstore: "恐龍雕像",
+        coupondeadline: "2018.1.31"
       },
       {
         key: 3,
-        couponcontent: "特約商店九折",
-        couponstore: "其他",
-        coupondeadline: "2018/12/31"
+        couponcontent: "免費兌換福寶明信片",
+        couponstore: "貓頭鷹福寶",
+        coupondeadline: "2018.12.31"
       },
       {
         key: 4,
-        couponcontent: "市民卡紅利點數加倍送",
-        couponstore: "其他",
-        coupondeadline: "2017/11/30"
+        couponcontent: "桃園市長鄭文燦親筆簽名乙份",
+        couponstore: "全園區",
+        coupondeadline: "2018.12.31"
       }
     ];
     this.currentPage = 1;
