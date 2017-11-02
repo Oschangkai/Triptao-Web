@@ -129,7 +129,7 @@ export default class broadcast extends React.Component {
         <h1>即時訊息</h1>
         <div className={`action-bar`}>
           <Button type="primary">
-            <Link to="/dashboard/">新增即時訊息</Link>
+            <Link to="/dashboard/broadcast/new">新增即時訊息</Link>
           </Button>
         </div>
         <Table

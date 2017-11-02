@@ -1,8 +1,14 @@
 import React from "react";
-import Map from "../../map";
 
 export default class AdminContent extends React.Component {
   render() {
-    return <Map />;
+    return (
+      <div>
+        <h1>哈囉！</h1>
+        <p style={{ color: "black", paddingLeft: 15, paddingTop: 10 }}>
+          這裡是 Triptao 的後台，請在左側選擇你要的欄位，填寫你要的資料唷！
+        </p>
+      </div>
+    );
   }
 }

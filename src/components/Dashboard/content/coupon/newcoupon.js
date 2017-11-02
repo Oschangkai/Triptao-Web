@@ -5,7 +5,6 @@ import {
   Form,
   Row,
   Col,
-  Select,
   Icon,
   Checkbox,
   DatePicker
@@ -13,7 +12,6 @@ import {
 import { Link } from "react-router-dom";
 
 const FormItem = Form.Item;
-const Option = Select.Option;
 
 const formItemLayout = {
   labelCol: {
@@ -51,10 +49,6 @@ const tailFormItemLayout = {
 
 function onChange(checkedValues) {
   console.log("checked = ", checkedValues);
-}
-
-function handleChange(value) {
-  console.log(`selected ${value}`);
 }
 
 export default class Newcoupon extends React.Component {

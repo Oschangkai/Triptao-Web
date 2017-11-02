@@ -19,21 +19,23 @@ import newcoupon from "./coupon/newcoupon";
 import broadcast from "./broadcast";
 
 import content from "./content";
+import E404 from "../../../routes/Error/404";
 
 export default class Contents extends React.Component {
   render() {
     return (
       <Switch>
+        <Route exact path="/dashboard" component={content} />
         <Route exact path="/dashboard/info" component={info} />
 
         <Route exact path="/dashboard/details" component={Details} />
         <Route exact path="/dashboard/details/new" component={newDetails} />
 
         <Route exact path="/dashboard/activity" component={activity} />
-        <Route exact path="/dashboard/activity/new" component={content} />
+        <Route exact path="/dashboard/activity/new" component={E404} />
 
         <Route exact path="/dashboard/offer/surprise" component={surprise} />
-        <Route exact path="/dashboard/offer/surprise/new" component={content} />
+        <Route exact path="/dashboard/offer/surprise/new" component={E404} />
 
         <Route exact path="/dashboard/offer/coupon" component={coupon} />
         <Route exact path="/dashboard/offer/coupon/new" component={newcoupon} />
@@ -42,9 +44,9 @@ export default class Contents extends React.Component {
         <Route exact path="/dashboard/offer/game/new" component={newgame} />
 
         <Route exact path="/dashboard/broadcast" component={broadcast} />
-        <Route exact path="/dashboard/broadcast/new" component={content} />
+        <Route exact path="/dashboard/broadcast/new" component={E404} />
 
-        <Route component={content} />
+        <Route component={E404} />
       </Switch>
     );
   }

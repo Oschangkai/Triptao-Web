@@ -138,7 +138,7 @@ export default class Details extends React.Component {
         <h1>地區地圖</h1>
         <div className={`action-bar`}>
           <Button type="primary" className="button">
-            <Link to="details/new">新增地標資訊</Link>
+            <Link to="/dashboard/details/new">新增地標資訊</Link>
           </Button>
         </div>
         <Table

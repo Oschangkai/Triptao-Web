@@ -101,7 +101,7 @@ export default class Details extends React.Component {
         <h1>近期活動</h1>
         <div className={`action-bar`}>
           <Button type="primary" className="button">
-            <Link to="/dashboard/"> 新增活動資訊</Link>
+            <Link to="/dashboard/activity/new"> 新增活動資訊</Link>
           </Button>
         </div>
         <Table

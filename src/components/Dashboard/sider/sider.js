@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { Menu, Icon } from "antd";
 
-import "./sider.css";
+import "./sider.less";
 
 const { SubMenu } = Menu;
 
@@ -12,7 +12,13 @@ export default class AdminSider extends React.Component {
     return (
       <div>
         <Link to="/dashboard">
-          <div className="logo">忠烈祠</div>
+          <div className="logo">
+            <img
+              src={process.env.PUBLIC_URL + "/img/logo.png"}
+              height={52}
+              alt="Triptao Logo"
+            />
+          </div>
         </Link>
         <Menu theme="light" defaultSelectedKeys={[""]} mode="inline">
           <Menu.Item key="/dashboard/info">
