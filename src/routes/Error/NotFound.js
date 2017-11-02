@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import "./Error.less";
 
-class Index extends React.Component {
+export default class NotFound extends React.Component {
   render() {
     return (
       <div className="container">
@@ -35,5 +35,3 @@ class Index extends React.Component {
     );
   }
 }
-
-export default Index;

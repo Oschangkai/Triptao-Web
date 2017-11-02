@@ -2,9 +2,9 @@ import React from "react";
 import { Button } from "antd";
 import { Link } from "react-router-dom";
 
-import "./Index.less";
+import "./Home.less";
 
-class Index extends React.Component {
+export default class Home extends React.Component {
   render() {
     return (
       <div className="outer">
@@ -23,5 +23,3 @@ class Index extends React.Component {
     );
   }
 }
-
-export default Index;
