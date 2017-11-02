@@ -68,7 +68,7 @@ export default class Newcoupon extends React.Component {
         <FormItem {...formItemLayout} label="優惠券名稱">
           <Input type="text" id="name" placeholder="請輸入優惠券名稱" />
         </FormItem>
-        <FormItem {...formItemLayout} label="請勾選可使用店家">
+        <FormItem {...formItemLayout} label="可使用店家">
           <Checkbox.Group onChange={onChange}>
             <Row>
               <Col span={24}>

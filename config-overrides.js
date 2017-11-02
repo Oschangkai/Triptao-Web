@@ -7,7 +7,7 @@ module.exports = function override(config, env) {
     config
   );
   config = rewireLess(config, env, {
-    modifyVars: { "@primary-color": "#E21756" }
+    modifyVars: { "@primary-color": "#E21756", "@font-size-base": "13px" }
   });
 
   return config;
