@@ -107,6 +107,7 @@ export default class game extends React.Component {
   render() {
     return (
       <div>
+        <h1>闖關活動</h1>
         <div className={`action-bar`}>
           <Button type="primary">
             <Link to="/dashboard/offer/game/new">新增闖關活動</Link>

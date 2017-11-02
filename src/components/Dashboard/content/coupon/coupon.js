@@ -119,9 +119,10 @@ export default class coupon extends React.Component {
   render() {
     return (
       <div>
+        <h1>優惠券</h1>
         <div className={`action-bar`}>
           <Button type="primary">
-            <Link to="/dashboard/">新增優惠券</Link>
+            <Link to="/dashboard/offer/coupon/new">新增優惠券</Link>
           </Button>
         </div>
         <Table

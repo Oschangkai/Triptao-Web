@@ -112,6 +112,7 @@ export default class surprise extends React.Component {
   render() {
     return (
       <div>
+        <h1>驚喜優惠</h1>
         <div className={`action-bar`}>
           <Button type="primary">
             <Link to="/dashboard/">新增驚喜優惠</Link>

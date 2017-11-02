@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Input, Form, Checkbox, Row, Col, Select } from "antd";
+import { Button, Input, Form, Checkbox, Row, Col, Select, Icon } from "antd";
 import { Link } from "react-router-dom";
 
 const FormItem = Form.Item;
@@ -100,10 +100,7 @@ export default class Newgame extends React.Component {
         </FormItem>
 
         <FormItem {...formItemLayout} label="關卡優惠券">
-          <Select
-            placeholder="請選擇優惠券"
-            onChange={handleChange}
-          >
+          <Select placeholder="請選擇優惠券" onChange={handleChange}>
             <Option value="A">搭乘公車半價優惠</Option>
             <Option value="B">味全埔心牧場門票九折</Option>
             <Option value="C">特約商店九折</Option>
@@ -114,7 +111,7 @@ export default class Newgame extends React.Component {
         <FormItem {...tailFormItemLayout}>
           <Link to="/dashboard/offer/game">
             <Button type="primary" htmlType="submit" onClick={this.success}>
-              新增
+              <Icon type="plus-circle-o" />新增
             </Button>
           </Link>
         </FormItem>

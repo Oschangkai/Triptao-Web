@@ -18,6 +18,12 @@ a {
     color: @base-color!important;
   }
 }
+button > a {
+  color: fade(white, 90%) !important;
+  &:hover {
+    color: fade(white, 100%) !important;
+  }
+}
 .ant-input {
   &:hover {
     border-color: @base-color !important;
@@ -53,5 +59,12 @@ label.ant-checkbox-wrapper {
   .ant-checkbox-inner {
     background-color: @base-color!important;
     border: 1px solid @base-color!important;
+  }
+}
+.content {
+  & h1 {
+    color: @base-color!important;
+    padding-top: 10px !important;
+    padding-left: 15px !important;
   }
 }

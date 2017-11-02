@@ -21,7 +21,7 @@ export default class Dashboard extends React.Component {
   };
   render() {
     return (
-      <Layout>
+      <Layout className="layout">
         <Sider
           breakpoint="md"
           collapsible
@@ -41,8 +41,8 @@ export default class Dashboard extends React.Component {
             className="header"
             style={
               this.state.collapsed
-                ? { width: "calc(100% - 64px)" }
-                : { width: "calc(100% - 200px)" }
+                ? { width: "calc(100% - 64px)", zIndex: 100 }
+                : { width: "calc(100% - 200px)", zIndex: 100 }
             }
           >
             <Menu
@@ -66,7 +66,7 @@ export default class Dashboard extends React.Component {
               </SubMenu>
             </Menu>
           </Header>
-          <Content style={{ paddingTop: 64, margin: "0 30px" }}>
+          <Content style={{ paddingTop: 64, margin: "0 30px 28px" }}>
             <Breadcrumb style={{ margin: "12px 0" }}>
               {Breadcrumbs(this.props)}
             </Breadcrumb>

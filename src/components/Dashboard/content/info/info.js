@@ -108,10 +108,7 @@ export default class info extends React.Component {
   render() {
     return (
       <Form>
-        <FormItem
-          {...formItemLayout}
-          style={{ paddingTop: 10, paddingLeft: 10 }}
-        >
+        <FormItem {...formItemLayout}>
           <h1>基本資訊</h1>
         </FormItem>
 

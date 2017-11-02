@@ -259,7 +259,7 @@ export default class newDetails extends React.Component {
         <FormItem {...tailFormItemLayout}>
           <Link to="/dashboard/Details">
             <Button type="primary" htmlType="submit">
-              送出
+              <Icon type="plus-circle-o" /> 新增
             </Button>
           </Link>
         </FormItem>
