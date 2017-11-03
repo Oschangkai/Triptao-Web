@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Table } from "antd";
+import { Button, Table, Spin } from "antd";
 import { Link } from "react-router-dom";
 import { TweenOneGroup } from "rc-tween-one";
 import Map from "../../map";
@@ -92,9 +92,17 @@ export default class Details extends React.Component {
     ];
 
     this.state = {
-      data: this.data
+      data: this.data,
+      loading: true
     };
   }
+
+  componentDidMount() {
+    this.setState({
+      loading: false
+    });
+  }
+
   positions = [
     { lat: 25.0022298, lng: 121.3277102 },
     { lat: 25.0018403, lng: 121.3277587 },
@@ -126,7 +134,7 @@ export default class Details extends React.Component {
   };
   render() {
     return (
-      <div>
+      <Spin spinning={this.state.loading}>
         <h1>地區地圖</h1>
         <div className={`action-bar`}>
           <Button type="primary" className="button">
@@ -142,7 +150,7 @@ export default class Details extends React.Component {
         <center>
           <Map positions={this.positions} />
         </center>
-      </div>
+      </Spin>
     );
   }
 }

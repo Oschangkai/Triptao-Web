@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Table } from "antd";
+import { Button, Table, Spin } from "antd";
 import { Link } from "react-router-dom";
 import { TweenOneGroup } from "rc-tween-one";
 import "../table.less";
@@ -62,7 +62,8 @@ export default class Details extends React.Component {
     ];
 
     this.state = {
-      data: this.data
+      data: this.data,
+      loading: true
     };
   }
 
@@ -89,10 +90,15 @@ export default class Details extends React.Component {
       </TweenOneGroup>
     );
   };
+  componentDidMount() {
+    this.setState({
+      loading: false
+    });
+  }
 
   render() {
     return (
-      <div>
+      <Spin spinning={this.state.loading}>
         <h1>近期活動</h1>
         <div className={`action-bar`}>
           <Button type="primary" className="button">
@@ -105,7 +111,7 @@ export default class Details extends React.Component {
           className={`table`}
           getBodyWrapper={this.getBodyWrapper}
         />
-      </div>
+      </Spin>
     );
   }
 }

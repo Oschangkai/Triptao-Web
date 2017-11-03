@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Table } from "antd";
+import { Button, Table, Spin } from "antd";
 import { TweenOneGroup } from "rc-tween-one";
 import { Link } from "react-router-dom";
 import "../table.less";
@@ -73,7 +73,8 @@ export default class surprise extends React.Component {
     this.currentPage = 1;
     this.newPage = 1;
     this.state = {
-      data: this.data
+      data: this.data,
+      loading: true
     };
   }
   onEnd = e => {
@@ -109,9 +110,15 @@ export default class surprise extends React.Component {
     this.newPage = pagination.current;
   };
 
+  componentDidMount() {
+    this.setState({
+      loading: false
+    });
+  }
+
   render() {
     return (
-      <div>
+      <Spin spinning={this.state.loading}>
         <h1>驚喜優惠</h1>
         <div className={`action-bar`}>
           <Button type="primary">
@@ -126,7 +133,7 @@ export default class surprise extends React.Component {
           getBodyWrapper={this.getBodyWrapper}
           onChange={this.pageChange}
         />
-      </div>
+      </Spin>
     );
   }
 }

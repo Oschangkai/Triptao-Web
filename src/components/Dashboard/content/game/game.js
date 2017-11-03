@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Table } from "antd";
+import { Button, Table, Spin } from "antd";
 import { TweenOneGroup } from "rc-tween-one";
 import { Link } from "react-router-dom";
 import "../table.less";
@@ -92,9 +92,15 @@ export default class game extends React.Component {
     this.newPage = pagination.current;
   };
 
+  componentDidMount() {
+    this.setState({
+      loading: false
+    });
+  }
+
   render() {
     return (
-      <div>
+      <Spin spinning={this.state.loading}>
         <h1>闖關活動</h1>
         <div className={`action-bar`}>
           <Button type="primary">
@@ -109,7 +115,7 @@ export default class game extends React.Component {
           getBodyWrapper={this.getBodyWrapper}
           onChange={this.pageChange}
         />
-      </div>
+      </Spin>
     );
   }
 }

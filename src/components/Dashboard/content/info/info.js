@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Radio, Input, Form, Avatar, Modal } from "antd";
+import { Button, Radio, Input, Form, Avatar, Modal, Spin } from "antd";
 import { Link } from "react-router-dom";
 
 const FormItem = Form.Item;
@@ -90,8 +90,15 @@ export default class info extends React.Component {
     this.state = {
       catagory: "園區",
       disabled: true,
+      loading: true,
       ...val
     };
+  }
+
+  componentDidMount() {
+    this.setState({
+      loading: false
+    });
   }
 
   onInputChanged = e => {
@@ -107,104 +114,106 @@ export default class info extends React.Component {
   };
   render() {
     return (
-      <Form>
-        <FormItem {...formItemLayout}>
-          <h1>基本資訊</h1>
-        </FormItem>
+      <Spin spinning={this.state.loading}>
+        <Form>
+          <FormItem {...formItemLayout}>
+            <h1>基本資訊</h1>
+          </FormItem>
 
-        <FormItem {...formItemLayout} label="用戶商標">
-          <Avatar size="large" src="https://i.imgur.com/93M0VZr.jpg" />
-        </FormItem>
-        <FormItem {...formItemLayout} label="AR寶寶">
-          <Link to="./AR">AR</Link>
-        </FormItem>
+          <FormItem {...formItemLayout} label="用戶商標">
+            <Avatar size="large" src="https://i.imgur.com/93M0VZr.jpg" />
+          </FormItem>
+          <FormItem {...formItemLayout} label="AR寶寶">
+            <Link to="./AR">AR</Link>
+          </FormItem>
 
-        <FormItem {...formItemLayout} label="園區名稱">
-          <Input
-            type="text"
-            id="name"
-            placeholder={placehoders.name}
-            value={this.state.name}
-            onChange={e => this.onInputChanged(e)}
-          />
-        </FormItem>
+          <FormItem {...formItemLayout} label="園區名稱">
+            <Input
+              type="text"
+              id="name"
+              placeholder={placehoders.name}
+              value={this.state.name}
+              onChange={e => this.onInputChanged(e)}
+            />
+          </FormItem>
 
-        <FormItem {...formItemLayout} label="園區分類">
-          <RadioGroup
-            id="category"
-            onChange={this.catagoryOnChanged}
-            value={this.state.catagory}
-            disabled={this.state.disabled}
-          >
-            {categoryRadio}
-          </RadioGroup>
-        </FormItem>
+          <FormItem {...formItemLayout} label="園區分類">
+            <RadioGroup
+              id="category"
+              onChange={this.catagoryOnChanged}
+              value={this.state.catagory}
+              disabled={this.state.disabled}
+            >
+              {categoryRadio}
+            </RadioGroup>
+          </FormItem>
 
-        <FormItem {...formItemLayout} label="園區地址">
-          <Input
-            type="text"
-            id="address"
-            placeholder={placehoders.address}
-            value={this.state.address}
-            onChange={e => this.onInputChanged(e)}
-          />
-        </FormItem>
+          <FormItem {...formItemLayout} label="園區地址">
+            <Input
+              type="text"
+              id="address"
+              placeholder={placehoders.address}
+              value={this.state.address}
+              onChange={e => this.onInputChanged(e)}
+            />
+          </FormItem>
 
-        <FormItem {...formItemLayout} label="聯絡電話">
-          <Input
-            type="text"
-            id="tel"
-            placeholder={placehoders.tel}
-            value={this.state.tel}
-            onChange={e => this.onInputChanged(e)}
-          />
-        </FormItem>
+          <FormItem {...formItemLayout} label="聯絡電話">
+            <Input
+              type="text"
+              id="tel"
+              placeholder={placehoders.tel}
+              value={this.state.tel}
+              onChange={e => this.onInputChanged(e)}
+            />
+          </FormItem>
 
-        <FormItem {...formItemLayout} label="開放時間">
-          <Input
-            type="text"
-            id="businessHour"
-            placeholder={placehoders.businessHour}
-            value={this.state.businessHour}
-            onChange={e => this.onInputChanged(e)}
-          />
-        </FormItem>
+          <FormItem {...formItemLayout} label="開放時間">
+            <Input
+              type="text"
+              id="businessHour"
+              placeholder={placehoders.businessHour}
+              value={this.state.businessHour}
+              onChange={e => this.onInputChanged(e)}
+            />
+          </FormItem>
 
-        <FormItem {...formItemLayout} label="門票資訊">
-          <Input
-            type="text"
-            id="admission"
-            placeholder={placehoders.admission}
-            value={this.state.admission}
-            onChange={e => this.onInputChanged(e)}
-          />
-        </FormItem>
+          <FormItem {...formItemLayout} label="門票資訊">
+            <Input
+              type="text"
+              id="admission"
+              placeholder={placehoders.admission}
+              value={this.state.admission}
+              onChange={e => this.onInputChanged(e)}
+            />
+          </FormItem>
 
-        <FormItem {...formItemLayout} label="園區介紹">
-          <TextArea
-            rows={5}
-            id="intro"
-            value={this.state.intro}
-            onChange={e => this.onInputChanged(e)}
-            placeholder={placehoders.intro}
-          />
-        </FormItem>
-        <FormItem {...formItemLayout} label="官方網站">
-          <Input
-            type="text"
-            id="website"
-            placeholder={placehoders.website}
-            value={this.state.website}
-            onChange={e => this.onInputChanged(e)}
-          />
-        </FormItem>
+          <FormItem {...formItemLayout} label="園區介紹">
+            <TextArea
+              rows={5}
+              id="intro"
+              value={this.state.intro}
+              onChange={e => this.onInputChanged(e)}
+              placeholder={placehoders.intro}
+            />
+          </FormItem>
+          <FormItem {...formItemLayout} label="官方網站">
+            <Input
+              type="text"
+              id="website"
+              placeholder={placehoders.website}
+              value={this.state.website}
+              onChange={e => this.onInputChanged(e)}
+            />
+          </FormItem>
 
-        <FormItem {...tailFormItemLayout}>
-          <Button type="primary" htmlType="submit" onClick={success}>
-            更新資料
-          </Button>
-        </FormItem>
-      </Form>
+          <FormItem {...tailFormItemLayout}>
+            <Button type="primary" htmlType="submit" onClick={success}>
+              更新資料
+            </Button>
+          </FormItem>
+        </Form>
+      </Spin>
     );
   }
 }

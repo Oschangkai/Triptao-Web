@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Radio, Input, Form, Upload, Icon, message } from "antd";
+import { Button, Radio, Input, Form, Upload, Icon, message, Spin } from "antd";
 import { Link } from "react-router-dom";
 import Map from "../../map";
 
@@ -175,95 +175,103 @@ export default class newDetails extends React.Component {
     });
   };
 
+  componentDidMount() {
+    this.setState({
+      loading: false
+    });
+  }
+
   render() {
     const imageUrl = this.state.imageUrl;
 
     return (
-      <Form>
-        <FormItem
-          {...formItemLayout}
-          style={{ paddingTop: 10, paddingLeft: 10 }}
-        >
-          <h1>新增地標資訊</h1>
-        </FormItem>
-
-        <FormItem {...formItemLayout} label={tag.category}>
-          <RadioGroup id="category" onChange={this.catagoryOnChanged}>
-            {categoryRadio}
-          </RadioGroup>
-        </FormItem>
-
-        <FormItem {...formItemLayout} label={this.state.name_tag}>
-          <Input
-            type="text"
-            className="Input"
-            id="name"
-            placeholder={placehoders.name}
-            onChange={e => this.onInputChanged(e)}
-          />
-        </FormItem>
-
-        <FormItem {...formItemLayout} label={this.state.time_tag}>
-          <Input
-            type="text"
-            className="Input"
-            id="time"
-            placeholder={placehoders.time}
-            onChange={e => this.onInputChanged(e)}
-          />
-        </FormItem>
-
-        <FormItem {...formItemLayout} label="特殊限制">
-          <Input
-            type="text"
-            className="Input"
-            id="limit"
-            placeholder="請輸入特殊限制"
-            onChange={e => this.onInputChanged(e)}
-          />
-        </FormItem>
-
-        <FormItem {...formItemLayout} label="簡介">
-          <TextArea
-            rows={5}
-            id="intro"
-            onChange={e => this.onInputChanged(e)}
-            placeholder="請輸入簡介"
-          />
-        </FormItem>
-        <FormItem {...formItemLayout} label="半透明圖">
-          <Upload
-            className="avatar-uploader"
-            name="avatar"
-            showUploadList={false}
-            action="//jsonplaceholder.typicode.com/posts/"
-            beforeUpload={beforeUpload}
-            onChange={this.handleChange}
+      <Spin spinning={this.state.loading}>
+        <Form>
+          <FormItem
+            {...formItemLayout}
+            style={{ paddingTop: 10, paddingLeft: 10 }}
           >
-            {imageUrl ? (
-              <img
-                style={{ width: 150, height: 112 }}
-                src={imageUrl}
-                alt=""
-                className="avatar"
-              />
-            ) : (
-              <Icon type="plus" className="avatar-uploader-trigger" />
-            )}
-          </Upload>
-        </FormItem>
-        <FormItem {...formItemLayout} label="選擇位置" />
-        <center>
-          <Map />
-        </center>
-        <FormItem {...tailFormItemLayout}>
-          <Link to="/dashboard/Details">
-            <Button type="primary" htmlType="submit">
-              <Icon type="plus-circle-o" /> 新增
-            </Button>
-          </Link>
-        </FormItem>
-      </Form>
+            <h1>新增地標資訊</h1>
+          </FormItem>
+
+          <FormItem {...formItemLayout} label={tag.category}>
+            <RadioGroup id="category" onChange={this.catagoryOnChanged}>
+              {categoryRadio}
+            </RadioGroup>
+          </FormItem>
+
+          <FormItem {...formItemLayout} label={this.state.name_tag}>
+            <Input
+              type="text"
+              className="Input"
+              id="name"
+              placeholder={placehoders.name}
+              onChange={e => this.onInputChanged(e)}
+            />
+          </FormItem>
+
+          <FormItem {...formItemLayout} label={this.state.time_tag}>
+            <Input
+              type="text"
+              className="Input"
+              id="time"
+              placeholder={placehoders.time}
+              onChange={e => this.onInputChanged(e)}
+            />
+          </FormItem>
+
+          <FormItem {...formItemLayout} label="特殊限制">
+            <Input
+              type="text"
+              className="Input"
+              id="limit"
+              placeholder="請輸入特殊限制"
+              onChange={e => this.onInputChanged(e)}
+            />
+          </FormItem>
+
+          <FormItem {...formItemLayout} label="簡介">
+            <TextArea
+              rows={5}
+              id="intro"
+              onChange={e => this.onInputChanged(e)}
+              placeholder="請輸入簡介"
+            />
+          </FormItem>
+          <FormItem {...formItemLayout} label="半透明圖">
+            <Upload
+              className="avatar-uploader"
+              name="avatar"
+              showUploadList={false}
+              action="//jsonplaceholder.typicode.com/posts/"
+              beforeUpload={beforeUpload}
+              onChange={this.handleChange}
+            >
+              {imageUrl ? (
+                <img
+                  style={{ width: 150, height: 112 }}
+                  src={imageUrl}
+                  alt=""
+                  className="avatar"
+                />
+              ) : (
+                <Icon type="plus" className="avatar-uploader-trigger" />
+              )}
+            </Upload>
+          </FormItem>
+          <FormItem {...formItemLayout} label="選擇位置" />
+          <center>
+            <Map />
+          </center>
+          <FormItem {...tailFormItemLayout}>
+            <Link to="/dashboard/Details">
+              <Button type="primary" htmlType="submit">
+                <Icon type="plus-circle-o" /> 新增
+              </Button>
+            </Link>
+          </FormItem>
+        </Form>
+      </Spin>
     );
   }
 }

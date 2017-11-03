@@ -1,9 +1,18 @@
 import React from "react";
+import { Spin } from "antd";
 
 export default class AdminContent extends React.Component {
+  state = {
+    loading: true
+  };
+  componentDidMount() {
+    this.setState({
+      loading: false
+    });
+  }
   render() {
     return (
-      <div>
+      <Spin spinning={this.state.loading}>
         <h1>哈囉！</h1>
         <p
           style={{
@@ -15,7 +24,7 @@ export default class AdminContent extends React.Component {
         >
           這裡是 Triptao 的後台，請在左側選擇你要的欄位，填寫你要的資料唷！
         </p>
-      </div>
+      </Spin>
     );
   }
 }
