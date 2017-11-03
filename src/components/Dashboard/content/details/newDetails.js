@@ -254,7 +254,7 @@ export default class newDetails extends React.Component {
         </FormItem>
         <FormItem {...formItemLayout} label="選擇位置" />
         <center>
-          <Map positions={[25.0060863, 121.3251495]} />
+          <Map />
         </center>
         <FormItem {...tailFormItemLayout}>
           <Link to="/dashboard/Details">
