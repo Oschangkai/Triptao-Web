@@ -19,9 +19,14 @@ export default class Home extends React.Component {
   render() {
     return (
       <Spin spinning={this.state.loading}>
-        <div className="outer">
+        <div
+          className="outer"
+          style={{
+            backgroundImage: "url(" + process.env.PUBLIC_URL + "/img/bk.png)"
+          }}
+        >
           <img
-            src={process.env.PUBLIC_URL + "/img/logo.png"}
+            src={process.env.PUBLIC_URL + "/img/logo.gif"}
             height={300}
             alt="Triptao Logo"
           />
