@@ -23,9 +23,12 @@ $ yarn start
 │  ├─ components/           # 元件區
 │  │  └─ Dashboard/           # Dashboard 的元件
 │  ├─ routes/               # 路由
+│  │  ├─ Home/                # 首頁
 │  │  ├─ Login/               # 登入頁面
 │  │  ├─ Dashboard/           # 後台頁面
-│  │  └─ Register/            # 註冊頁面
+│  │  ├─ Register/            # 註冊頁面
+│  │  └─ Error/               # 錯誤頁面
+│  ├─ hard-override.less    # 改寫頁面主題
 │  └─ index.js              # 路由進入點
 ├─ index.js               # 此專案進入點
 ├─ config-overrides.js    # 複寫 react-script 的檔案
