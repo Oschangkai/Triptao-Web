@@ -5,6 +5,7 @@
   "homepage": "http://triptao.kaiyeee.tw",
   "dependencies": {
     "antd": "^2.12.7",
+    "debug": "^4.0.1",
     "google-map-react": "^0.25.0",
     "nodemon": "^1.12.1",
     "rc-queue-anim": "^1.2.2",
